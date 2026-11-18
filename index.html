@@ -1,0 +1,2305 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Success 10 • Cô Nguyễn Thị Khánh Linh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Quicksand:wght@500;600;700&display=swap&subset=vietnamese" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <style>
+    :root {
+      --bg-canvas: linear-gradient(135deg, #FFF6F9 0%, #F4EEFF 52%, #EBF6FF 100%);
+      --pink-soft: #FFD6E6;
+      --pink-main: #FF5C93;
+      --pink-dark: #D93870;
+      --purple-soft: #EAE0FF;
+      --purple-main: #8B5CF6;
+      --purple-dark: #6D28D9;
+      --blue-soft: #D7F0FF;
+      --blue-main: #0284C7;
+      --blue-dark: #0369A1;
+      --mint-soft: #CCFCE0;
+      --mint-main: #16A34A;
+      --mint-dark: #15803D;
+      --amber-soft: #FEF3C7;
+      --amber-main: #D97706;
+      --amber-dark: #B45309;
+      --text-primary: #2B213A;
+      --text-secondary: #685A7C;
+      --surface-3d: linear-gradient(180deg, #FFFFFF 0%, #FCF9FF 100%);
+      --shadow-3d-card: 0 16px 32px rgba(139, 92, 246, 0.09), 0 4px 12px rgba(255, 92, 147, 0.06), inset 0 2px 3px rgba(255, 255, 255, 0.95);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: 'Quicksand', 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-canvas);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+      font-synthesis: none;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    h1, h2, h3, h4, .btn-3d, .nav-pill, .word-title, .tag-pill, .code-badge {
+      font-family: 'Nunito', 'Quicksand', sans-serif;
+    }
+
+    /* Pure CSS 3D Floating Pastel Spheres (Zero Icons, Cute 3D Depth) */
+    .bg-3d-orbs {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .orb-3d {
+      position: absolute;
+      border-radius: 50%;
+      animation: floatOrb 9s infinite ease-in-out;
+    }
+    .orb-pink {
+      width: 180px; height: 180px; top: 6%; left: -40px;
+      background: radial-gradient(circle at 30% 30%, #FFF0F6, #FFB8D2 65%, #F472B6 100%);
+      box-shadow: inset -10px -10px 24px rgba(219, 39, 119, 0.2), 0 20px 40px rgba(244, 114, 182, 0.18);
+      opacity: 0.55;
+    }
+    .orb-purple {
+      width: 220px; height: 220px; top: 38%; right: -60px;
+      background: radial-gradient(circle at 30% 30%, #F5F3FF, #DDD6FE 65%, #A78BFA 100%);
+      box-shadow: inset -12px -12px 28px rgba(109, 40, 217, 0.2), 0 20px 40px rgba(139, 92, 246, 0.16);
+      opacity: 0.5;
+      animation-delay: 2s;
+    }
+    .orb-blue {
+      width: 150px; height: 150px; bottom: 8%; left: 5%;
+      background: radial-gradient(circle at 30% 30%, #F0F9FF, #BAE6FD 65%, #38BDF8 100%);
+      box-shadow: inset -8px -8px 20px rgba(2, 132, 199, 0.2), 0 18px 36px rgba(56, 189, 248, 0.18);
+      opacity: 0.55;
+      animation-delay: 4s;
+    }
+    @keyframes floatOrb {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-22px) scale(1.03); }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Live Anti-Cheat & Monitoring Bar on Main Screen */
+    .monitor-bar {
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFF5F7 100%);
+      border: 2px solid #FBCFE8;
+      border-radius: 18px;
+      padding: 11px 18px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: 0 8px 20px rgba(255, 92, 147, 0.08);
+    }
+    .monitor-bar.alert-active {
+      background: linear-gradient(180deg, #FEF2F2 0%, #FEE2E2 100%);
+      border-color: #EF4444;
+      box-shadow: 0 8px 24px rgba(239, 68, 68, 0.22);
+    }
+    .status-dot {
+      display: inline-block;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #16A34A;
+      margin-right: 8px;
+      box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.18);
+    }
+    .monitor-bar.alert-active .status-dot {
+      background: #DC2626;
+      box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.25);
+    }
+    .monitor-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .stat-chip {
+      background: #FFFFFF;
+      border: 1.5px solid #E9D5FF;
+      border-radius: 999px;
+      padding: 4px 13px;
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    }
+    .stat-chip.danger {
+      background: #DC2626;
+      color: #FFFFFF;
+      border-color: #991B1B;
+    }
+
+    /* 3D Hero Header */
+    .hero-header {
+      background: linear-gradient(135deg, #FFE4EF 0%, #EFE6FF 52%, #DFF2FF 100%);
+      border-radius: var(--radius-xl);
+      padding: 24px 30px;
+      border: 3px solid #FFFFFF;
+      box-shadow: var(--shadow-3d-card);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .brand-emblem-3d {
+      width: 68px; height: 68px;
+      border-radius: 22px;
+      background: linear-gradient(145deg, #FF7AA8, #FF4785);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.35rem;
+      letter-spacing: -0.5px;
+      box-shadow: 0 8px 0 #C92A63, 0 14px 24px rgba(255, 71, 133, 0.3);
+      flex-shrink: 0;
+    }
+    .brand-text h1 {
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: #3B185F;
+      line-height: 1.2;
+    }
+    .brand-text p {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #6B46C1;
+      margin-top: 4px;
+    }
+    .teacher-credit {
+      display: inline-block;
+      margin-top: 7px;
+      background: #FFFFFF;
+      color: var(--pink-dark);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+
+    .account-card-3d {
+      background: rgba(255, 255, 255, 0.92);
+      padding: 14px 20px;
+      border-radius: var(--radius-lg);
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 8px 18px rgba(139, 92, 246, 0.08);
+      text-align: right;
+    }
+    .xp-tag-3d {
+      display: inline-block;
+      background: linear-gradient(180deg, #FEF08A, #FDE047);
+      color: #854D0E;
+      font-weight: 900;
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      box-shadow: 0 3px 0 #CA8A04;
+      margin-right: 6px;
+    }
+
+    /* 3D Tactile Buttons (Zero Icons) */
+    .btn-3d {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-weight: 800;
+      font-size: 0.93rem;
+      cursor: pointer;
+      transition: all 0.14s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn-3d:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+    }
+    .btn-3d:active {
+      transform: translateY(3px);
+    }
+    .btn-pink {
+      background: linear-gradient(180deg, #FF75A4, #FF4D88);
+      color: #FFFFFF;
+      box-shadow: 0 5px 0 #C92A63, 0 8px 16px rgba(255, 77, 136, 0.25);
+    }
+    .btn-pink:active { box-shadow: 0 2px 0 #C92A63; }
+
+    .btn-purple {
+      background: linear-gradient(180deg, #9D74F7, #7C3AED);
+      color: #FFFFFF;
+      box-shadow: 0 5px 0 #5B21B6, 0 8px 16px rgba(124, 58, 237, 0.25);
+    }
+    .btn-purple:active { box-shadow: 0 2px 0 #5B21B6; }
+
+    .btn-blue {
+      background: linear-gradient(180deg, #38BDF8, #0284C7);
+      color: #FFFFFF;
+      box-shadow: 0 5px 0 #0369A1, 0 8px 16px rgba(2, 132, 199, 0.22);
+    }
+    .btn-blue:active { box-shadow: 0 2px 0 #0369A1; }
+
+    .btn-mint {
+      background: linear-gradient(180deg, #22C55E, #16A34A);
+      color: #FFFFFF;
+      box-shadow: 0 5px 0 #15803D, 0 8px 16px rgba(22, 163, 74, 0.22);
+    }
+    .btn-mint:active { box-shadow: 0 2px 0 #15803D; }
+
+    .btn-amber {
+      background: linear-gradient(180deg, #FBBF24, #D97706);
+      color: #FFFFFF;
+      box-shadow: 0 5px 0 #92400E, 0 8px 16px rgba(217, 119, 6, 0.22);
+    }
+    .btn-amber:active { box-shadow: 0 2px 0 #92400E; }
+
+    .btn-red {
+      background: linear-gradient(180deg, #F87171, #DC2626);
+      color: #FFFFFF;
+      box-shadow: 0 4px 0 #991B1B;
+    }
+
+    .btn-soft {
+      background: #FFFFFF;
+      color: var(--text-primary);
+      border: 2px solid var(--purple-soft);
+      box-shadow: 0 4px 0 #DDD6FE;
+    }
+    .btn-soft:active { box-shadow: 0 1px 0 #DDD6FE; }
+
+    .btn-sm {
+      padding: 6px 14px;
+      font-size: 0.84rem;
+    }
+
+    /* Unit Selector & Controls Bar */
+    .unit-toolbar {
+      background: var(--surface-3d);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      border: 2px solid #FFFFFF;
+      box-shadow: var(--shadow-3d-card);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .field-group label {
+      display: block;
+      font-weight: 800;
+      font-size: 0.86rem;
+      color: var(--purple-dark);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    select, input[type="text"], input[type="email"], input[type="password"], textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 2px solid #E9D5FF;
+      font-family: 'Quicksand', 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      background: #FFFFFF;
+      color: var(--text-primary);
+      outline: none;
+      box-shadow: inset 0 2px 4px rgba(139, 92, 246, 0.05);
+      transition: border-color 0.2s;
+    }
+    select:focus, input:focus, textarea:focus {
+      border-color: var(--pink-main);
+    }
+
+    /* 3D Navigation Pills */
+    .nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .nav-pill {
+      background: #FFFFFF;
+      color: var(--text-primary);
+      border: 2px solid #F3E8FF;
+      padding: 11px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.94rem;
+      cursor: pointer;
+      box-shadow: 0 5px 0 #E9D5FF, 0 8px 15px rgba(0,0,0,0.04);
+      transition: all 0.15s ease;
+    }
+    .nav-pill:hover { transform: translateY(-2px); }
+    .nav-pill.active {
+      background: linear-gradient(180deg, #FF75A4, #FF4D88);
+      color: #FFFFFF;
+      border-color: #FF75A4;
+      box-shadow: 0 5px 0 #C92A63, 0 10px 20px rgba(255, 77, 136, 0.28);
+    }
+    .nav-pill.teacher-pill {
+      background: #FFFBEB;
+      border-color: #FDE68A;
+      color: #92400E;
+      box-shadow: 0 5px 0 #FCD34D;
+    }
+    .nav-pill.teacher-pill.active {
+      background: linear-gradient(180deg, #F59E0B, #D97706);
+      color: #FFFFFF;
+      border-color: #F59E0B;
+      box-shadow: 0 5px 0 #92400E;
+    }
+
+    /* 3D Main Content Card */
+    .card-3d {
+      background: var(--surface-3d);
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      border: 2px solid #FFFFFF;
+      box-shadow: var(--shadow-3d-card);
+      margin-bottom: 22px;
+    }
+
+    /* Vocabulary Cards */
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .vocab-item-3d {
+      background: #FFFFFF;
+      border-radius: 22px;
+      padding: 18px;
+      border: 2px solid #FCE7F3;
+      box-shadow: 0 8px 0 #FCE7F3, 0 12px 24px rgba(255, 92, 147, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease;
+    }
+    .vocab-item-3d:hover {
+      transform: translateY(-4px);
+      border-color: #F9A8D4;
+    }
+    .word-title {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--purple-dark);
+    }
+    .pos-pill {
+      display: inline-block;
+      background: #F3E8FF;
+      color: #6D28D9;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 2px 10px;
+      border-radius: 999px;
+      margin-left: 6px;
+    }
+    .ipa-line {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--blue-main);
+      margin: 4px 0 8px;
+    }
+    .meaning-pill {
+      display: inline-block;
+      background: #FFF1F2;
+      color: #BE123C;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 12px;
+      margin-bottom: 8px;
+    }
+    .syn-line {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #047857;
+      margin-bottom: 6px;
+    }
+    .example-line {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+    .wf-strip {
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 7px 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .audio-row {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+
+    /* Grammar Section Styling */
+    .grammar-box-3d {
+      background: #FFFFFF;
+      border: 2px solid #DBEAFE;
+      border-radius: 22px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 7px 0 #DBEAFE, 0 10px 20px rgba(2, 132, 199, 0.06);
+    }
+    .grammar-box-3d h3 {
+      color: var(--blue-dark);
+      font-weight: 900;
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+    .formula-block {
+      background: #F0F9FF;
+      border-left: 4px solid var(--blue-main);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      white-space: pre-line;
+      margin: 8px 0;
+      color: #0C4A6E;
+    }
+    .signal-strip {
+      background: #FFFBEB;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #92400E;
+    }
+
+    /* Pure Exam Section (Bộ đề kiểm tra) */
+    .exam-header-3d {
+      background: linear-gradient(135deg, #F5F3FF 0%, #EFF6FF 100%);
+      border: 2px solid #DDD6FE;
+      border-radius: 22px;
+      padding: 18px 22px;
+      margin-bottom: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .code-badge {
+      background: #3B185F;
+      color: #FFFFFF;
+      padding: 7px 18px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 0.98rem;
+      letter-spacing: 0.05em;
+      box-shadow: 0 4px 0 #1E0B36;
+    }
+    .q-card-3d {
+      background: #FFFFFF;
+      border: 2px solid #E9D5FF;
+      border-radius: 20px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 0 #F3E8FF;
+    }
+    .q-type-tag {
+      display: inline-block;
+      background: #F3E8FF;
+      color: var(--purple-dark);
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .opt-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .opt-btn-3d {
+      background: #FFFFFF;
+      border: 2px solid #E9D5FF;
+      border-radius: 14px;
+      padding: 11px 16px;
+      text-align: left;
+      font-family: 'Quicksand', 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 4px 0 #F3E8FF;
+      transition: all 0.14s ease;
+    }
+    .opt-btn-3d:hover {
+      border-color: var(--pink-main);
+      background: #FFF9FB;
+    }
+    .opt-btn-3d.selected {
+      background: #FFE4EF;
+      border-color: var(--pink-main);
+      color: #831843;
+      box-shadow: 0 4px 0 #F472B6;
+    }
+
+    /* Modals */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(43, 33, 58, 0.72);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 16px;
+    }
+    .modal-card-3d {
+      background: #FFFFFF;
+      border-radius: 30px;
+      padding: 28px;
+      max-width: 500px;
+      width: 100%;
+      border: 3px solid #FCE7F3;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+      text-align: center;
+    }
+    .hidden { display: none !important; }
+
+    .role-tabs {
+      display: flex;
+      background: #F3E8FF;
+      padding: 5px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      gap: 6px;
+    }
+    .role-tab {
+      flex: 1;
+      border: none;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.92rem;
+      cursor: pointer;
+      background: transparent;
+      color: #6D28D9;
+      transition: all 0.2s;
+    }
+    .role-tab.active {
+      background: #FFFFFF;
+      color: var(--pink-dark);
+      box-shadow: 0 3px 10px rgba(109, 40, 217, 0.14);
+    }
+
+    /* Teacher Panels */
+    .admin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+    .admin-panel-box {
+      background: #FFFFFF;
+      border-radius: 22px;
+      padding: 20px;
+      border: 2px solid #E9D5FF;
+      box-shadow: 0 6px 0 #F3E8FF;
+    }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 0.89rem;
+    }
+    table.data-table th, table.data-table td {
+      padding: 11px 12px;
+      border-bottom: 1px solid #F3E8FF;
+      text-align: left;
+      font-weight: 600;
+    }
+    table.data-table th {
+      background: #F5F3FF;
+      color: #4C1D95;
+      font-weight: 800;
+    }
+
+    @media print {
+      .monitor-bar, .hero-header, .unit-toolbar, .nav-pills, .no-print { display: none !important; }
+      body { background: #FFFFFF; }
+      .card-3d { box-shadow: none; border: none; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 3D Soft Pastel Floating Orbs (Pure CSS, Zero Icons) -->
+  <div class="bg-3d-orbs">
+    <div class="orb-3d orb-pink"></div>
+    <div class="orb-3d orb-purple"></div>
+    <div class="orb-3d orb-blue"></div>
+  </div>
+
+  <!-- Login Modal (Student & Teacher - No Pre-filled Teacher Gmail) -->
+  <div id="loginModal" class="modal-backdrop">
+    <div class="modal-card-3d">
+      <div style="display:inline-block; background:#FFE4EF; color:#BE123C; font-weight:900; font-size:0.82rem; padding:4px 14px; border-radius:999px; margin-bottom:8px;">
+        CHƯƠNG TRÌNH GDPT TIẾNG ANH 10
+      </div>
+      <h2 style="color:#3B185F; font-weight:900; font-size:1.55rem; margin-bottom:4px;">Global Success 10</h2>
+      <p style="color:var(--text-secondary); font-size:0.92rem; font-weight:700; margin-bottom:16px;">
+        Hệ thống học tập & kiểm tra của Cô Nguyễn Thị Khánh Linh
+      </p>
+
+      <div class="role-tabs">
+        <button id="tabStuLogin" class="role-tab active" onclick="switchAuthRole('student')">Học Sinh Đăng Nhập</button>
+        <button id="tabTeaLogin" class="role-tab" onclick="switchAuthRole('teacher')">Giáo Viên Đăng Nhập</button>
+      </div>
+
+      <!-- Student Login Form -->
+      <div id="stuAuthBox">
+        <div class="field-group" style="text-align:left; margin-bottom:11px;">
+          <label>Họ và tên học sinh (Bắt buộc):</label>
+          <input type="text" id="stuNameField" placeholder="Nhập họ và tên đầy đủ..." />
+        </div>
+        <div class="field-group" style="text-align:left; margin-bottom:11px;">
+          <label>Địa chỉ Gmail học sinh (Bắt buộc):</label>
+          <input type="email" id="stuEmailField" placeholder="Nhập địa chỉ Gmail của em..." />
+        </div>
+        <div class="field-group" style="text-align:left; margin-bottom:18px;">
+          <label>Lớp học:</label>
+          <input type="text" id="stuClassField" value="10A1" placeholder="Ví dụ: 10A1" />
+        </div>
+        <button class="btn-3d btn-pink" style="width:100%; font-size:1.02rem;" onclick="submitStudentLogin()">
+          Vào Lớp Học Global Success 10
+        </button>
+      </div>
+
+      <!-- Teacher Login Form (Empty fields, no pre-filled Gmail) -->
+      <div id="teaAuthBox" class="hidden">
+        <div class="field-group" style="text-align:left; margin-bottom:11px;">
+          <label>Gmail Giáo Viên:</label>
+          <input type="email" id="teaEmailField" placeholder="Nhập Gmail giáo viên..." autocomplete="off" />
+        </div>
+        <div class="field-group" style="text-align:left; margin-bottom:18px;">
+          <label>Mật khẩu Giáo Viên:</label>
+          <input type="password" id="teaPassField" placeholder="Nhập mật khẩu quản trị..." autocomplete="off" />
+        </div>
+        <button class="btn-3d btn-purple" style="width:100%; font-size:1.02rem;" onclick="submitTeacherLogin()">
+          Đăng Nhập Quyền Giáo Viên
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Anti-Cheat Violation Warning Modal -->
+  <div id="violationModal" class="modal-backdrop hidden">
+    <div class="modal-card-3d" style="border-color:#FCA5A5;">
+      <div style="display:inline-block; background:#FEE2E2; color:#B91C1C; font-weight:900; font-size:0.82rem; padding:4px 14px; border-radius:999px; margin-bottom:8px;">
+        CẢNH BÁO GIÁM SÁT PHÒNG THI
+      </div>
+      <h2 id="vioModalHeading" style="color:#DC2626; font-weight:900; margin-bottom:8px;">Phát Hiện Rời Màn Hình Kiểm Tra</h2>
+      <p id="vioModalText" style="font-weight:700; color:#374151; margin-bottom:14px;"></p>
+      <div style="background:#FEF2F2; border:1.5px solid #FECACA; color:#991B1B; padding:12px; border-radius:14px; font-weight:800; margin-bottom:18px; font-size:0.92rem;">
+        Số lần chuyển tab / thoát màn hình: <span id="vioTabNum">0</span> lần<br>
+        Số lần tra nghĩa khi đang làm đề: <span id="vioLookupNum">0</span> lần<br>
+        Dữ liệu vi phạm đã được cập nhật tự động về hệ thống của giáo viên.
+      </div>
+      <button class="btn-3d btn-pink" onclick="closeViolationModal()">Quay Lại Làm Bài Kiểm Tra</button>
+    </div>
+  </div>
+
+  <!-- Teacher Edit/Add Vocabulary Modal -->
+  <div id="wordEditorModal" class="modal-backdrop hidden">
+    <div class="modal-card-3d" style="max-width:540px; text-align:left;">
+      <h3 style="color:#3B185F; font-weight:900; margin-bottom:14px; text-align:center;">Chỉnh Sửa / Thêm Từ Vựng Mới</h3>
+      <input type="hidden" id="editVocabId" />
+      <div class="field-group" style="margin-bottom:9px;">
+        <label>Phân mục / Nhóm từ trong Unit:</label>
+        <input type="text" id="editVocabPart" list="unitPartsList" />
+        <datalist id="unitPartsList"></datalist>
+      </div>
+      <div style="display:grid; grid-template-columns:2fr 1fr; gap:10px; margin-bottom:9px;">
+        <div class="field-group">
+          <label>Từ / Cụm từ tiếng Anh:</label>
+          <input type="text" id="editVocabWord" />
+        </div>
+        <div class="field-group">
+          <label>Từ loại:</label>
+          <input type="text" id="editVocabPos" placeholder="(n), (v), (adj)..." />
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:9px;">
+        <div class="field-group">
+          <label>Phiên âm IPA:</label>
+          <input type="text" id="editVocabIpa" placeholder="/.../" />
+        </div>
+        <div class="field-group">
+          <label>Từ đồng nghĩa:</label>
+          <input type="text" id="editVocabSyn" placeholder="synonym 1 / synonym 2" />
+        </div>
+      </div>
+      <div class="field-group" style="margin-bottom:9px;">
+        <label>Nghĩa tiếng Việt:</label>
+        <input type="text" id="editVocabMeaning" />
+      </div>
+      <div class="field-group" style="margin-bottom:16px;">
+        <label>Câu ví dụ ngữ cảnh:</label>
+        <textarea id="editVocabExample" rows="2"></textarea>
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:10px;">
+        <button class="btn-3d btn-soft" onclick="closeWordEditor()">Hủy Bỏ</button>
+        <button class="btn-3d btn-mint" onclick="saveWordEditor()">Lưu Thay Đổi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Teacher Edit/Add Grammar Modal -->
+  <div id="grammarEditorModal" class="modal-backdrop hidden">
+    <div class="modal-card-3d" style="max-width:560px; text-align:left;">
+      <h3 style="color:#0369A1; font-weight:900; margin-bottom:14px; text-align:center;">Thêm / Chỉnh Sửa Kiến Thức Ngữ Pháp</h3>
+      <input type="hidden" id="editGramId" />
+      <div class="field-group" style="margin-bottom:9px;">
+        <label>Tiêu đề chuyên đề ngữ pháp:</label>
+        <input type="text" id="editGramTitle" placeholder="Ví dụ: Thì Quá Khứ Đơn & Quá Khứ Tiếp Diễn" />
+      </div>
+      <div class="field-group" style="margin-bottom:9px;">
+        <label>Cách dùng & Giải thích chi tiết:</label>
+        <textarea id="editGramUsage" rows="3"></textarea>
+      </div>
+      <div class="field-group" style="margin-bottom:9px;">
+        <label>Công thức cấu trúc:</label>
+        <textarea id="editGramFormula" rows="2"></textarea>
+      </div>
+      <div class="field-group" style="margin-bottom:16px;">
+        <label>Dấu hiệu nhận biết:</label>
+        <input type="text" id="editGramSignals" />
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:10px;">
+        <button class="btn-3d btn-soft" onclick="closeGrammarEditor()">Hủy Bỏ</button>
+        <button class="btn-3d btn-blue" onclick="saveGrammarEditor()">Lưu Ngữ Pháp</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Live Monitoring Banner on Main Screen -->
+    <div id="mainMonitorBar" class="monitor-bar">
+      <div style="font-weight:800; font-size:0.9rem; color:#4C1D95;">
+        <span class="status-dot"></span>
+        <span id="monitorMsgText">Chế độ giám sát học tập đang hoạt động: Không chuyển tab hoặc tra nghĩa khi đang làm bộ đề kiểm tra.</span>
+      </div>
+      <div class="monitor-badges">
+        <span class="stat-chip" id="chipTabCount">Chuyển tab: 0</span>
+        <span class="stat-chip" id="chipLookupCount">Tra nghĩa khi thi: 0</span>
+        <span class="stat-chip" style="background:#F0FDF4; border-color:#BBF7D0; color:#15803D;">Từ vựng Unit: <span id="unitWordTotal">0</span></span>
+      </div>
+    </div>
+
+    <!-- 3D Header -->
+    <header class="hero-header">
+      <div class="brand-block">
+        <div class="brand-emblem-3d">GS10</div>
+        <div class="brand-text">
+          <h1>Global Success 10</h1>
+          <p>Hệ Thống Học Từ Vựng, Ngữ Pháp & Luyện Đề Kiểm Tra Theo Từng Unit</p>
+          <span class="teacher-credit">Giáo viên phụ trách: Nguyễn Thị Khánh Linh</span>
+        </div>
+      </div>
+      <div class="account-card-3d">
+        <div style="font-weight:900; color:#3B185F; font-size:1.02rem;" id="hdrUserName">Chưa đăng nhập</div>
+        <div style="font-size:0.83rem; font-weight:700; color:var(--text-secondary);" id="hdrUserSub">---</div>
+        <div style="margin-top:8px;">
+          <span class="xp-tag-3d" id="hdrXpTag">0 XP</span>
+          <button class="btn-3d btn-soft btn-sm" onclick="openLoginModal()">Đổi Tài Khoản</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Unit & Filter Bar -->
+    <section class="unit-toolbar">
+      <div class="field-group">
+        <label>Chọn Unit (Global Success 10):</label>
+        <select id="unitSelector" onchange="onUnitSelected()"></select>
+      </div>
+      <div class="field-group">
+        <label>Phân mục nội dung trong Unit:</label>
+        <select id="subPartSelector" onchange="onSubPartSelected()"></select>
+      </div>
+      <div class="field-group">
+        <label>Giọng đọc Anh - Mỹ Nữ:</label>
+        <select id="voiceSelector"></select>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs (Strictly Teacher Tab only visible/accessible appropriately) -->
+    <nav class="nav-pills">
+      <button class="nav-pill active" id="pill-vocab" onclick="switchWorkspaceTab('vocab', this)">Học Từ Vựng Unit</button>
+      <button class="nav-pill" id="pill-grammar" onclick="switchWorkspaceTab('grammar', this)">Ngữ Pháp & Luyện Tập</button>
+      <button class="nav-pill" id="pill-exam" onclick="switchWorkspaceTab('exam', this)">Bộ Đề Kiểm Tra (30 – 80 Câu)</button>
+      <button class="nav-pill teacher-pill" id="pill-teacher" onclick="switchWorkspaceTab('teacher', this)">Quản Lý Giáo Viên</button>
+    </nav>
+
+    <!-- ================= SECTION 1: VOCABULARY LEARNING ================= -->
+    <section id="view-vocab" class="card-3d">
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:14px;">
+        <div>
+          <h2 style="color:#3B185F; font-weight:900; font-size:1.38rem;">Kho Từ Vựng Đầy Đủ Theo Unit</h2>
+          <p style="font-size:0.92rem; font-weight:600; color:var(--text-secondary);">
+            Đầy đủ từ loại, phiên âm IPA, nghĩa tiếng Việt, từ đồng nghĩa, gia đình từ và phát âm giọng nữ Anh - Mỹ chuẩn.
+          </p>
+        </div>
+        <div style="min-width:280px;">
+          <input type="text" id="vocabLookupBox" placeholder="Tra từ tiếng Anh, đồng nghĩa hoặc nghĩa Việt..." oninput="handleVocabSearchInput()" />
+        </div>
+      </div>
+      <div id="vocabSummaryLine" style="margin-top:12px; font-weight:800; color:var(--pink-dark); font-size:0.92rem;"></div>
+      <div id="vocabCardsContainer" class="vocab-grid"></div>
+    </section>
+
+    <!-- ================= SECTION 2: SEPARATE GRAMMAR & PRACTICE ================= -->
+    <section id="view-grammar" class="card-3d hidden">
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-bottom:18px;">
+        <div>
+          <h2 style="color:var(--blue-dark); font-weight:900; font-size:1.38rem;">Ngữ Pháp Trọng Tâm & Bài Tập Thực Hành</h2>
+          <p style="font-size:0.92rem; font-weight:600; color:var(--text-secondary);">
+            Hệ thống lý thuyết ngữ pháp chuẩn chương trình Global Success 10 kèm bài tập vận dụng có giải thích chi tiết.
+          </p>
+        </div>
+        <div id="teacherGrammarQuickBtn" class="hidden">
+          <button class="btn-3d btn-blue btn-sm" onclick="openGrammarEditor()">+ Thêm Lý Thuyết Ngữ Pháp</button>
+        </div>
+      </div>
+
+      <!-- Grammar Rules List -->
+      <div id="grammarNotesContainer"></div>
+
+      <!-- Grammar Practice Exercises -->
+      <div style="margin-top:24px; padding-top:20px; border-top:2px dashed #DBEAFE;">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin-bottom:14px;">
+          <h3 style="color:#3B185F; font-weight:900; font-size:1.2rem;">Bài Tập Luyện Ngữ Pháp Của Unit</h3>
+          <button class="btn-3d btn-mint btn-sm" onclick="checkGrammarPractice()">Chấm Điểm Luyện Ngữ Pháp</button>
+        </div>
+        <div id="grammarPracticeContainer"></div>
+        <div id="grammarPracticeFeedback" class="hidden" style="margin-top:14px; padding:14px 18px; border-radius:16px; background:#F0FDF4; border:2px solid #86EFAC; font-weight:800; color:#166534;"></div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 3: PURE EXAM BANK (BỘ ĐỀ KIỂM TRA) ================= -->
+    <section id="view-exam" class="card-3d hidden">
+      <div class="exam-header-3d no-print">
+        <div>
+          <h2 style="color:#3B185F; font-weight:900; font-size:1.38rem;">Bộ Đề Kiểm Tra Tổng Hợp (30 – 80 Câu)</h2>
+          <p style="font-size:0.9rem; font-weight:600; color:var(--text-secondary);">
+            Tự động sinh mã đề và đảo ngẫu nhiên câu hỏi, đáp án theo dạng bài và Unit đã chọn.
+          </p>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <span class="code-badge">MÃ ĐỀ: <span id="activeExamCode">GS10-101</span></span>
+          <button class="btn-3d btn-purple btn-sm" onclick="buildExamPaper(true)">Đảo Mã Đề Mới</button>
+          <button class="btn-3d btn-soft btn-sm" onclick="window.print()">In Đề Kiểm Tra</button>
+        </div>
+      </div>
+
+      <!-- Exam Filter Controls -->
+      <div class="unit-toolbar no-print" style="background:#FFF8FB; border-color:#FCE7F3;">
+        <div class="field-group">
+          <label>Số lượng câu hỏi (30 – 80 câu):</label>
+          <select id="examLengthSelect" onchange="buildExamPaper(false)">
+            <option value="30">30 câu</option>
+            <option value="40" selected>40 câu</option>
+            <option value="50">50 câu</option>
+            <option value="60">60 câu</option>
+            <option value="80">80 câu</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Phân chia theo dạng bài kiểm tra:</label>
+          <select id="examFormatSelect" onchange="buildExamPaper(false)">
+            <option value="mixed_all" selected>Trộn tất cả các dạng (Từ vựng + Ngữ pháp + Nghe viết)</option>
+            <option value="mcq_context">Dạng 1: Trắc nghiệm từ vựng ngữ cảnh</option>
+            <option value="listen_spell">Dạng 2: Nghe phát âm từ rồi viết từ</option>
+            <option value="synonym">Dạng 3: Chọn từ đồng nghĩa</option>
+            <option value="word_form">Dạng 4: Chọn từ loại đúng</option>
+            <option value="meaning_check">Dạng 5: Kiểm tra nghĩa từ vựng</option>
+            <option value="grammar_mcq">Dạng 6: Trắc nghiệm ngữ pháp Unit</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Mở theo số mã đề:</label>
+          <div style="display:flex; gap:8px;">
+            <input type="text" id="examSeedBox" placeholder="Ví dụ: 105, 208..." />
+            <button class="btn-3d btn-blue btn-sm" onclick="applyExamSeed()">Mở Đề</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clean Exam Questions List (Strictly for testing; audio button ONLY on Listen & Type items) -->
+      <div id="examPaperList"></div>
+
+      <div class="no-print" style="margin-top:22px;">
+        <button class="btn-3d btn-mint" style="font-size:1.05rem; padding:13px 28px;" onclick="gradeAndSubmitExam()">
+          Nộp Bài Kiểm Tra & Nhận Điểm XP
+        </button>
+      </div>
+
+      <div id="examScoreSummary" class="hidden" style="margin-top:22px; background:linear-gradient(135deg, #FFF1F2, #F5F3FF); border:3px solid #F472B6; border-radius:24px; padding:24px;"></div>
+    </section>
+
+    <!-- ================= SECTION 4: TEACHER MANAGEMENT PORTAL ================= -->
+    <section id="view-teacher" class="card-3d hidden">
+      <div id="teacherGateScreen" style="text-align:center; padding:30px 16px;">
+        <div style="display:inline-block; background:#FEF3C7; color:#92400E; font-weight:900; font-size:0.82rem; padding:4px 14px; border-radius:999px; margin-bottom:8px;">
+          KHU VỰC BẢO MẬT GIÁO VIÊN
+        </div>
+        <h2 style="color:#3B185F; font-weight:900; margin-bottom:8px;">Xác Thực Quyền Giáo Viên</h2>
+        <p style="font-weight:600; color:var(--text-secondary); max-width:480px; margin:0 auto 18px;">
+          Chỉ giáo viên phụ trách mới có quyền chỉnh sửa từ vựng, thêm ngữ pháp, tải lên tài liệu Word/Drive, xem bảng điểm và kiểm tra số lần phạm lỗi của học sinh.
+        </p>
+        <div style="max-width:340px; margin:0 auto 12px; text-align:left;">
+          <label style="font-weight:800; font-size:0.86rem; color:#4C1D95;">Gmail Giáo Viên:</label>
+          <input type="email" id="gateTeaEmail" placeholder="Nhập Gmail giáo viên..." autocomplete="off" />
+        </div>
+        <div style="max-width:340px; margin:0 auto 18px; text-align:left;">
+          <label style="font-weight:800; font-size:0.86rem; color:#4C1D95;">Mật khẩu:</label>
+          <input type="password" id="gateTeaPass" placeholder="Nhập mật khẩu..." autocomplete="off" />
+        </div>
+        <button class="btn-3d btn-purple" onclick="unlockTeacherGate()">Mở Khóa Quản Trị</button>
+      </div>
+
+      <div id="teacherWorkspace" class="hidden">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; border-bottom:2px solid #F3E8FF; padding-bottom:16px; margin-bottom:20px;">
+          <div>
+            <h2 style="color:#3B185F; font-weight:900;">Bảng Điều Khiển Giáo Viên - Global Success 10</h2>
+            <p style="font-size:0.9rem; font-weight:700; color:var(--purple-dark);">Quản lý học liệu từng Unit, nhập tài liệu Word/Drive và giám sát kết quả thi</p>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button class="btn-3d btn-pink btn-sm" onclick="openWordEditor()">+ Thêm Từ Vựng</button>
+            <button class="btn-3d btn-blue btn-sm" onclick="openGrammarEditor()">+ Thêm Ngữ Pháp</button>
+            <button class="btn-3d btn-soft btn-sm" onclick="restoreDefaultUnitData()">Khôi Phục Dữ Liệu Gốc</button>
+            <button class="btn-3d btn-soft btn-sm" onclick="lockTeacherGate()">Khóa Quản Trị</button>
+          </div>
+        </div>
+
+        <!-- Upload Word (.docx/.doc) & Google Drive Integration -->
+        <div class="admin-grid">
+          <div class="admin-panel-box">
+            <h3 style="color:#1D4ED8; font-weight:900; margin-bottom:6px;">Tải Lên File Word (.docx / .doc) Tự Động Tích Hợp</h3>
+            <p style="font-size:0.86rem; font-weight:600; color:var(--text-secondary); margin-bottom:10px;">
+              Chọn file Word (<code>.docx</code>, <code>.doc</code>) hoặc <code>.txt/.csv</code> để tự động trích xuất từ vựng vào Unit đang chọn.
+            </p>
+            <div class="field-group" style="margin-bottom:10px;">
+              <label>Tên phân mục lưu trữ trong Unit:</label>
+              <input type="text" id="uploadPartName" value="Tài liệu bổ sung của giáo viên" />
+            </div>
+            <input type="file" id="docFileUploader" accept=".docx,.doc,.txt,.csv,.json" onchange="processUploadedDoc(event)" style="background:#F8FAFC; padding:8px; border-radius:12px;" />
+            <div id="docUploadStatus" style="margin-top:8px; font-size:0.85rem; font-weight:800; color:#1E40AF;"></div>
+          </div>
+
+          <div class="admin-panel-box">
+            <h3 style="color:#047857; font-weight:900; margin-bottom:6px;">Tích Hợp Tài Liệu Từ Google Drive / Google Docs</h3>
+            <p style="font-size:0.86rem; font-weight:600; color:var(--text-secondary); margin-bottom:10px;">
+              Dán link Google Docs chia sẻ công khai để trích xuất nội dung tự động vào kho bài tập của Unit hiện tại.
+            </p>
+            <div class="field-group" style="margin-bottom:10px;">
+              <label>Đường dẫn Google Docs / Drive:</label>
+              <input type="text" id="driveLinkField" placeholder="https://docs.google.com/document/d/..." />
+            </div>
+            <button class="btn-3d btn-mint btn-sm" onclick="importFromGoogleDocs()">Trích Xuất Nội Dung Từ Drive</button>
+          </div>
+        </div>
+
+        <!-- Add Grammar Practice Question & Bulk Vocab -->
+        <div class="admin-grid">
+          <div class="admin-panel-box">
+            <h3 style="color:#6D28D9; font-weight:900; margin-bottom:6px;">Thêm Câu Hỏi Luyện Ngữ Pháp Vào Unit</h3>
+            <div class="field-group" style="margin-bottom:8px;">
+              <label>Câu hỏi trắc nghiệm ngữ pháp:</label>
+              <input type="text" id="newGramQText" placeholder="Ví dụ: While we ______ dinner, the phone rang." />
+            </div>
+            <div class="field-group" style="margin-bottom:8px;">
+              <label>4 phương án (ngăn cách bằng dấu | ):</label>
+              <input type="text" id="newGramQOpts" placeholder="had | were having | have | are having" />
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px;">
+              <div class="field-group">
+                <label>Đáp án đúng:</label>
+                <input type="text" id="newGramQAns" placeholder="were having" />
+              </div>
+              <div class="field-group">
+                <label>Giải thích ngắn:</label>
+                <input type="text" id="newGramQExp" placeholder="Hành động đang xảy ra chia QKTD" />
+              </div>
+            </div>
+            <button class="btn-3d btn-purple btn-sm" onclick="addGrammarQuestion()">Thêm Vào Bộ Đề Ngữ Pháp Unit</button>
+          </div>
+
+          <div class="admin-panel-box">
+            <h3 style="color:#BE123C; font-weight:900; margin-bottom:6px;">Nhập Nhanh Danh Sách Từ Vựng & Kết Nối Sheet</h3>
+            <p style="font-size:0.84rem; font-weight:600; color:var(--text-secondary); margin-bottom:6px;">
+              Định dạng mỗi dòng: <code>Từ tiếng Anh | Từ loại | Phiên âm | Nghĩa Việt | Đồng nghĩa | Ví dụ</code>
+            </p>
+            <textarea id="bulkWordsTextarea" rows="2" placeholder="empathy | (n) | /ˈempəθi/ | sự đồng cảm | compassion | Parents instil empathy early on."></textarea>
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; margin-bottom:10px;">
+              <button class="btn-3d btn-pink btn-sm" onclick="importBulkWordsText()">Nạp Từ Vựng Vào Unit</button>
+              <button class="btn-3d btn-blue btn-sm" onclick="downloadBackupJSON()">Xuất Sao Lưu (.JSON)</button>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <input type="text" id="sheetUrlField" placeholder="Link Google Apps Script Webhook..." />
+              <button class="btn-3d btn-amber btn-sm" onclick="saveWebhookLink()">Lưu Sheet</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Scores & Violations Log Table -->
+        <div>
+          <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px;">
+            <h3 style="color:#3B185F; font-weight:900;">Bảng Điểm Học Sinh & Thống Kê Số Lần Phạm Lỗi</h3>
+            <button class="btn-3d btn-mint btn-sm" onclick="exportLogsCSV()">Xuất Bảng Điểm Excel (.CSV)</button>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Thời gian</th>
+                  <th>Học sinh</th>
+                  <th>Gmail</th>
+                  <th>Lớp</th>
+                  <th>Unit / Mã đề</th>
+                  <th>Điểm số</th>
+                  <th>Chuyển tab</th>
+                  <th>Tra nghĩa khi thi</th>
+                  <th>Ghi chú</th>
+                </tr>
+              </thead>
+              <tbody id="adminLogsTbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // ================= 1. PRIVATE TEACHER AUTH CONSTANTS =================
+    const _T_MAIL = "nguyenthikhanhlinh562@gmail.com";
+    const _T_KEY = "meosieunhan";
+
+    const defaultUnitsDB = {"Unit 1: Family Life": {"vocab": [{"id": "u1_1", "part": "Từ vựng Unit 1", "word": "breadwinner", "pos": "(n)", "ipa": "/ˈbredwɪnə(r)/", "meaning": "trụ cột gia đình", "synonym": "provider / earner", "example": "My father works hard as the breadwinner of our family.", "wordFamily": []}, {"id": "u1_2", "part": "Từ vựng Unit 1", "word": "homemaker", "pos": "(n)", "ipa": "/ˈhəʊmmeɪkə(r)/", "meaning": "người nội trợ", "synonym": "housewife / househusband", "example": "She decided to be a full-time homemaker to care for her children.", "wordFamily": []}, {"id": "u1_3", "part": "Từ vựng Unit 1", "word": "groceries", "pos": "(n)", "ipa": "/ˈɡrəʊsəriz/", "meaning": "thực phẩm và tạp hóa", "synonym": "foodstuffs / provisions", "example": "I usually help my mother shop for groceries after school.", "wordFamily": []}, {"id": "u1_4", "part": "Từ vựng Unit 1", "word": "heavy lifting", "pos": "(n.phr)", "ipa": "/ˌhevi ˈlɪftɪŋ/", "meaning": "công việc mang vác nặng", "synonym": "strenuous physical tasks", "example": "Men often do the heavy lifting in the household.", "wordFamily": []}, {"id": "u1_5", "part": "Từ vựng Unit 1", "word": "laundry", "pos": "(n)", "ipa": "/ˈlɔːndri/", "meaning": "việc giặt giũ, quần áo giặt", "synonym": "washing", "example": "My sister does the laundry every Sunday morning.", "wordFamily": []}, {"id": "u1_6", "part": "Từ vựng Unit 1", "word": "washing-up", "pos": "(n)", "ipa": "/ˌwɒʃɪŋ ˈʌp/", "meaning": "việc rửa bát đĩa", "synonym": "dishwashing", "example": "After dinner, I am responsible for doing the washing-up.", "wordFamily": []}, {"id": "u1_7", "part": "Từ vựng Unit 1", "word": "equally", "pos": "(adv)", "ipa": "/ˈiːkwəli/", "meaning": "một cách bình đẳng", "synonym": "fairly / evenly", "example": "Household chores should be shared equally among family members.", "wordFamily": [{"word": "equal", "pos": "(adj)"}, {"word": "equally", "pos": "(adv)"}, {"word": "equality", "pos": "(n)"}]}, {"id": "u1_8", "part": "Từ vựng Unit 1", "word": "gratitude", "pos": "(n)", "ipa": "/ˈɡrætɪtjuːd/", "meaning": "lòng biết ơn", "synonym": "thankfulness / appreciation", "example": "Doing housework helps children show gratitude to their parents.", "wordFamily": [{"word": "gratitude", "pos": "(n)"}, {"word": "grateful", "pos": "(adj)"}]}, {"id": "u1_9", "part": "Từ vựng Unit 1", "word": "strengthen", "pos": "(v)", "ipa": "/ˈstreŋθn/", "meaning": "củng cố, làm bền chặt", "synonym": "reinforce / fortify / deepen", "example": "Having family meals together helps strengthen family bonds.", "wordFamily": [{"word": "strength", "pos": "(n)"}, {"word": "strong", "pos": "(adj)"}, {"word": "strengthen", "pos": "(v)"}]}, {"id": "u1_10", "part": "Từ vựng Unit 1", "word": "responsibility", "pos": "(n)", "ipa": "/rɪˌspɒnsəˈbɪləti/", "meaning": "trách nhiệm, bổn phận", "synonym": "duty / obligation", "example": "Taking out the rubbish is my daily responsibility.", "wordFamily": [{"word": "responsible", "pos": "(adj)"}, {"word": "responsibility", "pos": "(n)"}]}], "grammarNotes": [{"id": "g_u1_1", "title": "Thì Hiện Tại Đơn (Present Simple) vs. Hiện Tại Tiếp Diễn (Present Continuous)", "usage": "• Present Simple: Diễn tả thói quen hằng ngày, lịch trình hoặc sự thật hiển nhiên.\n• Present Continuous: Diễn tả hành động đang diễn ra tại thời điểm nói hoặc hành động mang tính tạm thời.", "formula": "Present Simple: S + V(s/es) | S + don't/doesn't + V_bare\nPresent Continuous: S + am/is/are + V-ing", "signals": "Simple: always, usually, often, sometimes, every day | Continuous: now, right now, at the moment, Look!, Listen!, today"}], "grammarQuestions": [{"id": "gq_u1_1", "question": "Look! Minh ______ the washing-up in the kitchen right now.", "options": ["does", "is doing", "did", "has done"], "answer": "is doing", "explanation": "Có dấu hiệu 'Look!' và 'right now' nên chia thì Hiện tại tiếp diễn."}, {"id": "gq_u1_2", "question": "My mother usually ______ for groceries at the local market.", "options": ["shops", "is shopping", "shopped", "will shop"], "answer": "shops", "explanation": "Trạng từ tần suất 'usually' diễn tả thói quen nên chia Hiện tại đơn."}, {"id": "gq_u1_3", "question": "Today my father ______ dinner because my mother is working late.", "options": ["cooks", "is cooking", "cooked", "cook"], "answer": "is cooking", "explanation": "Hành động mang tính tạm thời diễn ra hôm nay ('Today') chia Hiện tại tiếp diễn."}]}, "Unit 2: Humans and the Environment": {"vocab": [{"id": "u2_1", "part": "Từ vựng Unit 2", "word": "carbon footprint", "pos": "(n.phr)", "ipa": "/ˌkɑːbən ˈfʊtprɪnt/", "meaning": "dấu chân carbon (lượng khí thải CO2)", "synonym": "carbon emissions", "example": "Cycling to school helps reduce your carbon footprint.", "wordFamily": []}, {"id": "u2_2", "part": "Từ vựng Unit 2", "word": "eco-friendly", "pos": "(adj)", "ipa": "/ˌiːkəʊ ˈfrendli/", "meaning": "thân thiện với môi trường", "synonym": "environmentally friendly / green", "example": "We should use eco-friendly cloth bags instead of plastic ones.", "wordFamily": []}, {"id": "u2_3", "part": "Từ vựng Unit 2", "word": "awareness", "pos": "(n)", "ipa": "/əˈweənəs/", "meaning": "nhận thức, ý thức", "synonym": "consciousness / understanding", "example": "The campaign raises public awareness of recycling.", "wordFamily": [{"word": "aware", "pos": "(adj)"}, {"word": "awareness", "pos": "(n)"}]}, {"id": "u2_4", "part": "Từ vựng Unit 2", "word": "sustainable", "pos": "(adj)", "ipa": "/səˈsteɪnəbl/", "meaning": "bền vững", "synonym": "renewable / viable / long-term", "example": "Solar and wind power are sustainable energy sources.", "wordFamily": [{"word": "sustain", "pos": "(v)"}, {"word": "sustainable", "pos": "(adj)"}, {"word": "sustainability", "pos": "(n)"}]}, {"id": "u2_5", "part": "Từ vựng Unit 2", "word": "organic", "pos": "(adj)", "ipa": "/ɔːˈɡænɪk/", "meaning": "hữu cơ", "synonym": "natural / chemical-free", "example": "Organic vegetables are grown without harmful pesticides.", "wordFamily": []}, {"id": "u2_6", "part": "Từ vựng Unit 2", "word": "household appliances", "pos": "(n.phr)", "ipa": "/ˈhaʊshəʊld əˈplaɪənsɪz/", "meaning": "thiết bị điện gia dụng", "synonym": "domestic devices", "example": "Turn off unused household appliances to save energy.", "wordFamily": []}, {"id": "u2_7", "part": "Từ vựng Unit 2", "word": "adopt", "pos": "(v)", "ipa": "/əˈdɒpt/", "meaning": "áp dụng, theo đuổi (lối sống)", "synonym": "embrace / take up / follow", "example": "More young people are adopting a green lifestyle.", "wordFamily": [{"word": "adopt", "pos": "(v)"}, {"word": "adoption", "pos": "(n)"}]}, {"id": "u2_8", "part": "Từ vựng Unit 2", "word": "litter", "pos": "(n / v)", "ipa": "/ˈlɪtə(r)/", "meaning": "rác thải bừa bãi / xả rác", "synonym": "rubbish / trash / scatter waste", "example": "Students are reminded not to litter in the schoolyard.", "wordFamily": []}], "grammarNotes": [{"id": "g_u2_1", "title": "Tương Lai Đơn (Will) vs. Tương Lai Gần (Be going to) & Câu Bị Động (Passive Voice)", "usage": "• Will + V_bare: Quyết định tức thì lúc nói, lời hứa, dự đoán không căn cứ.\n• Be going to + V_bare: Kế hoạch đã định sẵn hoặc dự đoán có bằng chứng rõ ràng.\n• Câu bị động: S + be + V3/ed (+ by O).", "formula": "S + will + V_bare | S + am/is/are + going to + V_bare\nPassive: S + be + V3/ed", "signals": "tomorrow, next week, in the future, Look at those dark clouds!"}], "grammarQuestions": [{"id": "gq_u2_1", "question": "Look at those dark clouds! It ______ rain very soon.", "options": ["will", "is going to", "is", "was"], "answer": "is going to", "explanation": "Dự đoán có bằng chứng rõ ràng ở hiện tại dùng 'be going to'."}, {"id": "gq_u2_2", "question": "More trees ______ around our school by the Youth Union next Sunday.", "options": ["will plant", "will be planted", "planted", "are planting"], "answer": "will be planted", "explanation": "Câu bị động thì Tương lai đơn: will + be + V3/ed."}]}, "Unit 3: Music": {"vocab": [{"id": "u3_1", "part": "Từ vựng Unit 3", "word": "talented", "pos": "(adj)", "ipa": "/ˈtæləntɪd/", "meaning": "tài năng", "synonym": "gifted / skilled / brilliant", "example": "Mozart was a brilliantly talented composer.", "wordFamily": [{"word": "talent", "pos": "(n)"}, {"word": "talented", "pos": "(adj)"}]}, {"id": "u3_2", "part": "Từ vựng Unit 3", "word": "audience", "pos": "(n)", "ipa": "/ˈɔːdiəns/", "meaning": "khán giả", "synonym": "spectators / viewers / crowd", "example": "The audience clapped loudly after her live performance.", "wordFamily": []}, {"id": "u3_3", "part": "Từ vựng Unit 3", "word": "judge", "pos": "(n)", "ipa": "/dʒʌdʒ/", "meaning": "giám khảo", "synonym": "adjudicator / evaluator", "example": "The judges praised the young singer's powerful voice.", "wordFamily": [{"word": "judge", "pos": "(n/v)"}, {"word": "judgement", "pos": "(n)"}]}, {"id": "u3_4", "part": "Từ vựng Unit 3", "word": "perform", "pos": "(v)", "ipa": "/pəˈfɔːm/", "meaning": "biểu diễn", "synonym": "present / stage / play", "example": "She will perform her latest hit song tonight.", "wordFamily": [{"word": "perform", "pos": "(v)"}, {"word": "performance", "pos": "(n)"}, {"word": "performer", "pos": "(n)"}]}, {"id": "u3_5", "part": "Từ vựng Unit 3", "word": "eliminate", "pos": "(v)", "ipa": "/ɪˈlɪmɪneɪt/", "meaning": "loại bỏ, loại khỏi cuộc thi", "synonym": "remove / knock out / exclude", "example": "One contestant is eliminated from the show every week.", "wordFamily": [{"word": "eliminate", "pos": "(v)"}, {"word": "elimination", "pos": "(n)"}]}, {"id": "u3_6", "part": "Từ vựng Unit 3", "word": "release", "pos": "(v / n)", "ipa": "/rɪˈliːs/", "meaning": "phát hành / sự phát hành", "synonym": "launch / publish / issue", "example": "The band plans to release a new album next month.", "wordFamily": []}], "grammarNotes": [{"id": "g_u3_1", "title": "Câu Ghép (Compound Sentences) & Động Từ Nguyên Mẫu (To-infinitive / Bare infinitive)", "usage": "• Liên từ kết hợp FANBOYS: for, and, nor, but, or, yet, so.\n• To-infinitive: sau decide, expect, plan, want, hope, agree, promise.\n• Bare infinitive: sau động từ khuyết thiếu và sau make, let, hear, see, watch + O.", "formula": "Clause 1, + FANBOYS + Clause 2 | make/let + O + V_bare", "signals": "and, but, so, or, yet, make, let"}], "grammarQuestions": [{"id": "gq_u3_1", "question": "Her parents didn't let her ______ to the music festival alone.", "options": ["go", "to go", "going", "went"], "answer": "go", "explanation": "Cấu trúc 'let + O + V(bare)' dùng động từ nguyên mẫu không 'to'."}, {"id": "gq_u3_2", "question": "He practiced singing very hard, ______ he won first prize in the contest.", "options": ["so", "but", "or", "yet"], "answer": "so", "explanation": "Liên từ 'so' diễn tả kết quả."}]}, "Unit 4: For a Better Community": {"vocab": [{"id": "u4_1", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "volunteer", "pos": "(v / n)", "ipa": "/ˌvɒlənˈtɪə(r)/", "meaning": "tình nguyện, xung phong / tình nguyện viên", "synonym": "offer freely / unpaid helper", "example": "Many young people volunteer to clean local parks, improving the environment for everyone.", "wordFamily": [{"word": "volunteer", "pos": "(v/n)"}, {"word": "voluntary", "pos": "(adj)"}, {"word": "voluntarily", "pos": "(adv)"}, {"word": "volunteerism", "pos": "(n)"}]}, {"id": "u4_2", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "voluntary", "pos": "(adj)", "ipa": "/ˈvɒləntri/", "meaning": "tự nguyện, mang tính tình nguyện", "synonym": "optional / willing / unpaid", "example": "Joining the weekend cleanup project was a voluntary decision made by hundreds of residents.", "wordFamily": [{"word": "voluntary", "pos": "(adj)"}, {"word": "volunteer", "pos": "(v/n)"}, {"word": "volunteerism", "pos": "(n)"}]}, {"id": "u4_3", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "communicate", "pos": "(v)", "ipa": "/kəˈmjuːnɪkeɪt/", "meaning": "giao tiếp, truyền đạt", "synonym": "interact / convey / converse", "example": "Learning how to communicate well can help volunteers build trust with community members.", "wordFamily": [{"word": "communicate", "pos": "(v)"}, {"word": "communication", "pos": "(n)"}, {"word": "communicative", "pos": "(adj)"}, {"word": "communicator", "pos": "(n)"}]}, {"id": "u4_4", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "community", "pos": "(n)", "ipa": "/kəˈmjuːnəti/", "meaning": "cộng đồng", "synonym": "society / neighborhood / public", "example": "Strong relationships within a community make it easier to solve common problems.", "wordFamily": [{"word": "community", "pos": "(n)"}, {"word": "communal", "pos": "(adj)"}]}, {"id": "u4_5", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "community development", "pos": "(n.phr)", "ipa": "/kəˈmjuːnəti dɪˈveləpmənt/", "meaning": "sự phát triển cộng đồng", "synonym": "social improvement / civic growth", "example": "Volunteers play a key role in driving community development through education and skill training.", "wordFamily": [{"word": "develop", "pos": "(v)"}, {"word": "development", "pos": "(n)"}, {"word": "developing", "pos": "(adj)"}, {"word": "developed", "pos": "(adj)"}]}, {"id": "u4_6", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "advertise", "pos": "(v)", "ipa": "/ˈædvətaɪz/", "meaning": "quảng cáo, thông báo rộng rãi", "synonym": "promote / publicize / announce", "example": "The organization will advertise free training programs for unemployed youth in the city.", "wordFamily": [{"word": "advertise", "pos": "(v)"}, {"word": "advertisement", "pos": "(n)"}, {"word": "advertiser", "pos": "(n)"}]}, {"id": "u4_7", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "applicant", "pos": "(n)", "ipa": "/ˈæplɪkənt/", "meaning": "người nộp đơn, ứng viên", "synonym": "candidate / petitioner", "example": "Each applicant must submit a form describing their motivation for joining the charity project.", "wordFamily": [{"word": "apply", "pos": "(v)"}, {"word": "application", "pos": "(n)"}, {"word": "applicant", "pos": "(n)"}, {"word": "applicable", "pos": "(adj)"}]}, {"id": "u4_8", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "applicable", "pos": "(adj)", "ipa": "/əˈplɪkəbl/", "meaning": "có thể áp dụng được, thiết thực", "synonym": "relevant / suitable / usable", "example": "Skills learned in this training are applicable to many real-life community situations.", "wordFamily": [{"word": "applicable", "pos": "(adj)"}, {"word": "apply", "pos": "(v)"}, {"word": "application", "pos": "(n)"}]}, {"id": "u4_9", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "boost", "pos": "(v / n)", "ipa": "/buːst/", "meaning": "thúc đẩy, tăng cường / sự khích lệ", "synonym": "increase / enhance / improve", "example": "The donation campaign provided a boost to the orphanage's food supply.", "wordFamily": [{"word": "boost", "pos": "(v/n)"}, {"word": "booster", "pos": "(n)"}]}, {"id": "u4_10", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "confidence", "pos": "(n)", "ipa": "/ˈkɒnfɪdəns/", "meaning": "sự tự tin, lòng tin", "synonym": "self-assurance / certainty / belief", "example": "Speaking in front of the community improved his confidence and communication skills.", "wordFamily": [{"word": "confidence", "pos": "(n)"}, {"word": "confident", "pos": "(adj)"}, {"word": "confidently", "pos": "(adv)"}, {"word": "confidant", "pos": "(n)"}]}, {"id": "u4_11", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "endless", "pos": "(adj)", "ipa": "/ˈendləs/", "meaning": "vô tận, không ngừng, rất nhiều", "synonym": "limitless / boundless / infinite", "example": "There are endless opportunities for getting involved in local volunteer activities.", "wordFamily": [{"word": "end", "pos": "(n/v)"}, {"word": "endless", "pos": "(adj)"}, {"word": "endlessly", "pos": "(adv)"}]}, {"id": "u4_12", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "environmentalist", "pos": "(n)", "ipa": "/ɪnˌvaɪrənˈmentəlɪst/", "meaning": "nhà bảo vệ môi trường", "synonym": "conservationist / eco-activist", "example": "She dreams of becoming an environmentalist to protect endangered species.", "wordFamily": [{"word": "environment", "pos": "(n)"}, {"word": "environmental", "pos": "(adj)"}, {"word": "environmentalist", "pos": "(n)"}]}, {"id": "u4_13", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "orphan", "pos": "(n)", "ipa": "/ˈɔːfn/", "meaning": "trẻ mồ côi", "synonym": "parentless child", "example": "Volunteers spent the weekend playing games with orphans at the children's shelter.", "wordFamily": [{"word": "orphan", "pos": "(n)"}, {"word": "orphanage", "pos": "(n)"}, {"word": "orphaned", "pos": "(adj)"}]}, {"id": "u4_14", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "orphanage", "pos": "(n)", "ipa": "/ˈɔːfənɪdʒ/", "meaning": "trại trẻ mồ côi, mái ấm", "synonym": "children's home / shelter", "example": "Our group donated food and clothes to the local orphanage last weekend.", "wordFamily": [{"word": "orphanage", "pos": "(n)"}, {"word": "orphan", "pos": "(n)"}]}, {"id": "u4_15", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "charity", "pos": "(n)", "ipa": "/ˈtʃærəti/", "meaning": "tổ chức từ thiện, lòng nhân ái", "synonym": "philanthropy / relief organization", "example": "She has been volunteering for the same charity for more than ten years.", "wordFamily": [{"word": "charity", "pos": "(n)"}, {"word": "charitable", "pos": "(adj)"}]}, {"id": "u4_16", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "charitable", "pos": "(adj)", "ipa": "/ˈtʃærətəbl/", "meaning": "nhân đạo, từ thiện, giúp đỡ người nghèo", "synonym": "philanthropic / benevolent / generous", "example": "The foundation is a charitable organisation helping disabled children access education.", "wordFamily": [{"word": "charitable", "pos": "(adj)"}, {"word": "charity", "pos": "(n)"}]}, {"id": "u4_17", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "donate", "pos": "(v)", "ipa": "/dəʊˈneɪt/", "meaning": "quyên góp, hiến tặng", "synonym": "contribute / give / bestow", "example": "Local businesses agreed to donate part of their profit to community development projects.", "wordFamily": [{"word": "donate", "pos": "(v)"}, {"word": "donation", "pos": "(n)"}, {"word": "donor", "pos": "(n)"}]}, {"id": "u4_18", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "donation", "pos": "(n)", "ipa": "/dəʊˈneɪʃn/", "meaning": "sự quyên góp, vật/tiền hiến tặng", "synonym": "contribution / gift / offering", "example": "They received a large donation from a former student to fund scholarships.", "wordFamily": [{"word": "donation", "pos": "(n)"}, {"word": "donate", "pos": "(v)"}, {"word": "donor", "pos": "(n)"}]}, {"id": "u4_19", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "donor", "pos": "(n)", "ipa": "/ˈdəʊnə(r)/", "meaning": "người quyên góp, nhà tài trợ, người hiến", "synonym": "contributor / benefactor / giver", "example": "Generous donors often send money, clothes, and unwanted items to help disaster victims.", "wordFamily": [{"word": "donor", "pos": "(n)"}, {"word": "donate", "pos": "(v)"}, {"word": "donation", "pos": "(n)"}]}, {"id": "u4_20", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "vary", "pos": "(v)", "ipa": "/ˈveəri/", "meaning": "thay đổi, khác nhau, đa dạng hóa", "synonym": "differ / fluctuate / change", "example": "Prices for transport vary greatly between rural areas and big cities.", "wordFamily": [{"word": "vary", "pos": "(v)"}, {"word": "various", "pos": "(adj)"}, {"word": "variable", "pos": "(adj)"}, {"word": "variety", "pos": "(n)"}]}, {"id": "u4_21", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "various", "pos": "(adj)", "ipa": "/ˈveəriəs/", "meaning": "đa dạng, nhiều, khác nhau", "synonym": "diverse / numerous / assorted", "example": "She joined various community programs to expand her social network.", "wordFamily": [{"word": "various", "pos": "(adj)"}, {"word": "vary", "pos": "(v)"}, {"word": "variety", "pos": "(n)"}]}, {"id": "u4_22", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "variable", "pos": "(adj)", "ipa": "/ˈveəriəbl/", "meaning": "hay thay đổi, biến động thất thường", "synonym": "changeable / unstable / fluctuating", "example": "Weather conditions in the mountains can be highly variable during the rainy season.", "wordFamily": [{"word": "variable", "pos": "(adj)"}, {"word": "vary", "pos": "(v)"}]}, {"id": "u4_23", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "participant", "pos": "(n)", "ipa": "/pɑːˈtɪsɪpənt/", "meaning": "người tham gia", "synonym": "attendee / member / contributor", "example": "The workshop allowed every participant to share ideas for improving community safety.", "wordFamily": [{"word": "participate", "pos": "(v)"}, {"word": "participant", "pos": "(n)"}, {"word": "participation", "pos": "(n)"}]}, {"id": "u4_24", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "item", "pos": "(n)", "ipa": "/ˈaɪtəm/", "meaning": "món đồ, vật phẩm, khoản mục", "synonym": "object / article / goods", "example": "Please list every item you will donate so we can keep accurate records.", "wordFamily": [{"word": "item", "pos": "(n)"}, {"word": "itemize", "pos": "(v)"}]}, {"id": "u4_25", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "flooded", "pos": "(adj)", "ipa": "/ˈflʌdɪd/", "meaning": "bị ngập lụt, lũ lụt", "synonym": "inundated / submerged / waterlogged", "example": "The community organized a fundraiser to support people in flooded rural regions.", "wordFamily": [{"word": "flood", "pos": "(n/v)"}, {"word": "flooded", "pos": "(adj)"}]}, {"id": "u4_26", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "generous", "pos": "(adj)", "ipa": "/ˈdʒenərəs/", "meaning": "hào phóng, rộng lượng", "synonym": "charitable / open-handed / kind", "example": "They showed generous support during the disaster relief efforts.", "wordFamily": [{"word": "generous", "pos": "(adj)"}, {"word": "generosity", "pos": "(n)"}, {"word": "generously", "pos": "(adv)"}]}, {"id": "u4_27", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "landslide", "pos": "(n)", "ipa": "/ˈlændslaɪd/", "meaning": "sạt lở đất, lở đất", "synonym": "mudslide / rockfall / earthslip", "example": "Authorities warned residents about possible landslides due to unstable slopes.", "wordFamily": [{"word": "landslide", "pos": "(n)"}]}, {"id": "u4_28", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "essential", "pos": "(adj)", "ipa": "/ɪˈsenʃl/", "meaning": "thiết yếu, cực kỳ quan trọng", "synonym": "crucial / vital / necessary", "example": "Cooperation among team members is essential to achieve the charity's goals.", "wordFamily": [{"word": "essential", "pos": "(adj)"}, {"word": "essentially", "pos": "(adv)"}]}, {"id": "u4_29", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "gain", "pos": "(v / n)", "ipa": "/ɡeɪn/", "meaning": "đạt được, thu được (kiến thức, kinh nghiệm)", "synonym": "acquire / obtain / earn", "example": "By joining this program, you will gain knowledge from experienced humanitarian workers.", "wordFamily": [{"word": "gain", "pos": "(v/n)"}]}, {"id": "u4_30", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "request", "pos": "(n / v)", "ipa": "/rɪˈkwest/", "meaning": "lời yêu cầu, đề nghị / yêu cầu", "synonym": "appeal / petition / demand", "example": "We sent a formal request to the government for building materials and technical assistance.", "wordFamily": [{"word": "request", "pos": "(n/v)"}]}, {"id": "u4_31", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "job duties", "pos": "(n.phr)", "ipa": "/dʒɒb ˈdjuːtiz/", "meaning": "nhiệm vụ công việc, trách nhiệm được giao", "synonym": "responsibilities / tasks / obligations", "example": "Understanding your job duties helps avoid confusion and improve team efficiency.", "wordFamily": [{"word": "duty", "pos": "(n)"}]}, {"id": "u4_32", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "appreciate", "pos": "(v)", "ipa": "/əˈpriːʃieɪt/", "meaning": "trân trọng, cảm kích, đánh giá cao", "synonym": "value / be grateful for / cherish", "example": "She would greatly appreciate assistance in preparing the venue for the charity concert.", "wordFamily": [{"word": "appreciate", "pos": "(v)"}, {"word": "appreciation", "pos": "(n)"}, {"word": "appreciative", "pos": "(adj)"}]}, {"id": "u4_33", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "practical", "pos": "(adj)", "ipa": "/ˈpræktɪkl/", "meaning": "thực tế, thiết thực, hữu ích", "synonym": "useful / realistic / hands-on", "example": "This handbook contains practical advice for working in difficult environments.", "wordFamily": [{"word": "practical", "pos": "(adj)"}, {"word": "impractical", "pos": "(adj)"}, {"word": "practice", "pos": "(n/v)"}]}, {"id": "u4_34", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "life-saving skills", "pos": "(n.phr)", "ipa": "/ˈlaɪf seɪvɪŋ skɪlz/", "meaning": "kỹ năng cứu hộ, kỹ năng cứu sinh (sơ cứu, CPR)", "synonym": "first-aid skills / emergency rescue skills", "example": "First aid and CPR are essential life-saving skills everyone should learn.", "wordFamily": [{"word": "life-saving", "pos": "(adj)"}]}, {"id": "u4_35", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "poverty", "pos": "(n)", "ipa": "/ˈpɒvəti/", "meaning": "sự nghèo đói, cảnh nghèo túng", "synonym": "hardship / destitution / deprivation", "example": "Many families fell into extreme poverty after losing their main source of income.", "wordFamily": [{"word": "poverty", "pos": "(n)"}, {"word": "poor", "pos": "(adj)"}]}, {"id": "u4_36", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "aim", "pos": "(n / v)", "ipa": "/eɪm/", "meaning": "mục tiêu, mục đích / nhắm tới", "synonym": "goal / objective / purpose", "example": "The project's main aim is to provide clean drinking water for rural families.", "wordFamily": [{"word": "aim", "pos": "(n/v)"}]}, {"id": "u4_37", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "careful", "pos": "(adj)", "ipa": "/ˈkeəfl/", "meaning": "cẩn thận, thận trọng", "synonym": "cautious / attentive / thorough", "example": "Please be careful with these important documents; they are needed for the funding application.", "wordFamily": [{"word": "care", "pos": "(n/v)"}, {"word": "careful", "pos": "(adj)"}, {"word": "careless", "pos": "(adj)"}, {"word": "caring", "pos": "(adj)"}]}, {"id": "u4_38", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "careless", "pos": "(adj)", "ipa": "/ˈkeələs/", "meaning": "bất cẩn, cẩu thả", "synonym": "negligent / reckless / thoughtless", "example": "It was careless of him to leave the donation box unattended in a crowded place.", "wordFamily": [{"word": "careless", "pos": "(adj)"}, {"word": "carelessness", "pos": "(n)"}]}, {"id": "u4_39", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "access", "pos": "(n / v)", "ipa": "/ˈækses/", "meaning": "sự tiếp cận, quyền sử dụng / truy cập", "synonym": "entry / admission / availability", "example": "The training program ensures all members have access to the latest safety equipment.", "wordFamily": [{"word": "access", "pos": "(n/v)"}, {"word": "accessible", "pos": "(adj)"}]}, {"id": "u4_40", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "unwanted", "pos": "(adj)", "ipa": "/ˌʌnˈwɒntɪd/", "meaning": "không dùng đến nữa, dư thừa", "synonym": "unused / unneeded / surplus", "example": "The shelter received a large donation of clothes, most of which were unwanted by the public.", "wordFamily": [{"word": "want", "pos": "(v/n)"}, {"word": "unwanted", "pos": "(adj)"}]}, {"id": "u4_41", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "cheerful", "pos": "(adj)", "ipa": "/ˈtʃɪəfl/", "meaning": "vui vẻ, tươi tỉnh, lạc quan", "synonym": "joyful / optimistic / upbeat", "example": "Despite the challenges, she remained cheerful and motivated to help others.", "wordFamily": [{"word": "cheer", "pos": "(v/n)"}, {"word": "cheerful", "pos": "(adj)"}]}, {"id": "u4_42", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "confused", "pos": "(adj)", "ipa": "/kənˈfjuːzd/", "meaning": "bối rối, lúng túng", "synonym": "puzzled / bewildered / perplexed", "example": "He looked confused when he couldn't find the meeting room.", "wordFamily": [{"word": "confuse", "pos": "(v)"}, {"word": "confused", "pos": "(adj)"}, {"word": "confusing", "pos": "(adj)"}, {"word": "confusion", "pos": "(n)"}]}, {"id": "u4_43", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "frustration", "pos": "(n)", "ipa": "/frʌˈstreɪʃn/", "meaning": "sự bực bội, thất vọng, nản lòng", "synonym": "annoyance / disappointment / stress", "example": "Losing his job caused him a lot of frustration and stress.", "wordFamily": [{"word": "frustrate", "pos": "(v)"}, {"word": "frustrated", "pos": "(adj)"}, {"word": "frustrating", "pos": "(adj)"}, {"word": "frustration", "pos": "(n)"}]}, {"id": "u4_44", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "disaster", "pos": "(n)", "ipa": "/dɪˈzɑːstə(r)/", "meaning": "thảm họa, thiên tai", "synonym": "catastrophe / calamity / tragedy", "example": "The earthquake was a natural disaster that destroyed many homes.", "wordFamily": [{"word": "disaster", "pos": "(n)"}, {"word": "disastrous", "pos": "(adj)"}]}, {"id": "u4_45", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "digital technology", "pos": "(n.phr)", "ipa": "/ˈdɪdʒɪtl tekˈnɒlədʒi/", "meaning": "công nghệ số", "synonym": "modern IT / electronic tech", "example": "Using digital technology can help charities reach more people online.", "wordFamily": [{"word": "digital", "pos": "(adj)"}]}, {"id": "u4_46", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "online donation platform", "pos": "(n.phr)", "ipa": "/ˈɒnlaɪn dəʊˈneɪʃn ˈplætfɔːm/", "meaning": "nền tảng quyên góp trực tuyến", "synonym": "crowdfunding website / charity portal", "example": "Online donation platforms make it easier for people to give money from anywhere in the world.", "wordFamily": []}, {"id": "u4_47", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "stock", "pos": "(n / v)", "ipa": "/stɒk/", "meaning": "kho dự trữ, nguồn hàng dự phòng", "synonym": "supply / reserve / inventory", "example": "The charity keeps a stock of supplies ready for emergencies.", "wordFamily": []}, {"id": "u4_48", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "export", "pos": "(n / v)", "ipa": "/ˈekspɔːt/", "meaning": "sự xuất khẩu / xuất khẩu", "synonym": "sell abroad / ship overseas", "example": "The country earns money from the exports of rice to other nations.", "wordFamily": [{"word": "export", "pos": "(n/v)"}, {"word": "import", "pos": "(n/v)"}]}, {"id": "u4_49", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "import", "pos": "(v / n)", "ipa": "/ɪmˈpɔːt/", "meaning": "nhập khẩu / hàng nhập khẩu", "synonym": "bring in from abroad / buy overseas", "example": "They import fresh fruit from overseas for the charity event.", "wordFamily": [{"word": "import", "pos": "(v/n)"}, {"word": "export", "pos": "(v/n)"}]}, {"id": "u4_50", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "civics class", "pos": "(n.phr)", "ipa": "/ˈsɪvɪks klɑːs/", "meaning": "môn Giáo dục công dân", "synonym": "citizenship education", "example": "In civics class, students learn about their rights and responsibilities as citizens.", "wordFamily": [{"word": "civic", "pos": "(adj)"}]}, {"id": "u4_51", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "accident", "pos": "(n)", "ipa": "/ˈæksɪdənt/", "meaning": "tai nạn, sự cố bất ngờ", "synonym": "crash / mishap / collision", "example": "The road was closed because of a serious car accident.", "wordFamily": [{"word": "accident", "pos": "(n)"}, {"word": "accidental", "pos": "(adj)"}]}, {"id": "u4_52", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "willing", "pos": "(adj)", "ipa": "/ˈwɪlɪŋ/", "meaning": "sẵn lòng, tự nguyện, nhiệt tình", "synonym": "ready / eager / prepared", "example": "She is always willing to volunteer for community projects.", "wordFamily": [{"word": "willing", "pos": "(adj)"}, {"word": "unwilling", "pos": "(adj)"}, {"word": "willingness", "pos": "(n)"}]}, {"id": "u4_53", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "hopeful", "pos": "(adj)", "ipa": "/ˈhəʊpfl/", "meaning": "đầy hy vọng, lạc quan", "synonym": "optimistic / confident / positive", "example": "We are hopeful that the new fundraising event will be successful.", "wordFamily": [{"word": "hope", "pos": "(v/n)"}, {"word": "hopeful", "pos": "(adj)"}, {"word": "hopeless", "pos": "(adj)"}]}, {"id": "u4_54", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "active", "pos": "(adj)", "ipa": "/ˈæktɪv/", "meaning": "năng động, tích cực tham gia", "synonym": "energetic / dynamic / engaged", "example": "He is an active member of the club, always participating in its activities.", "wordFamily": [{"word": "active", "pos": "(adj)"}, {"word": "inactive", "pos": "(adj)"}, {"word": "activity", "pos": "(n)"}]}, {"id": "u4_55", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "announcement", "pos": "(n)", "ipa": "/əˈnaʊnsmənt/", "meaning": "lời thông báo, thông cáo", "synonym": "notice / declaration / statement", "example": "He heard about the volunteer position in a public announcement last Monday.", "wordFamily": [{"word": "announce", "pos": "(v)"}, {"word": "announcement", "pos": "(n)"}, {"word": "announcer", "pos": "(n)"}]}, {"id": "u4_56", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "helpless", "pos": "(adj)", "ipa": "/ˈhelpləs/", "meaning": "bất lực, yếu thế, cần được giúp đỡ", "synonym": "vulnerable / defenseless / powerless", "example": "Homeless children are helpless victims whom our community needs to protect.", "wordFamily": [{"word": "help", "pos": "(v/n)"}, {"word": "helpful", "pos": "(adj)"}, {"word": "helpless", "pos": "(adj)"}]}, {"id": "u4_57", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "available", "pos": "(adj)", "ipa": "/əˈveɪləbl/", "meaning": "có sẵn, sẵn sàng phục vụ", "synonym": "accessible / obtainable / ready", "example": "The scholarship program is available to students from disadvantaged backgrounds.", "wordFamily": [{"word": "available", "pos": "(adj)"}, {"word": "availability", "pos": "(n)"}]}, {"id": "u4_58", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "chance", "pos": "(n)", "ipa": "/tʃɑːns/", "meaning": "cơ hội, dịp may", "synonym": "opportunity / occasion / opening", "example": "The festival gave local artists a chance to showcase their talents.", "wordFamily": []}, {"id": "u4_59", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "follow", "pos": "(v)", "ipa": "/ˈfɒləʊ/", "meaning": "theo dõi, làm theo", "synonym": "track / watch / observe", "example": "Residents stayed up late to follow the rescue mission live on the news channel.", "wordFamily": [{"word": "follow", "pos": "(v)"}, {"word": "follower", "pos": "(n)"}]}, {"id": "u4_60", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "benefit", "pos": "(n / v)", "ipa": "/ˈbenɪfɪt/", "meaning": "lợi ích / mang lại lợi ích", "synonym": "advantage / gain / profit", "example": "When teenagers do volunteer work, they gain numerous benefits.", "wordFamily": [{"word": "benefit", "pos": "(n/v)"}, {"word": "beneficial", "pos": "(adj)"}]}, {"id": "u4_61", "part": "Phần 1: Từ vựng trọng tâm Unit 4", "word": "tiring", "pos": "(adj)", "ipa": "/ˈtaɪərɪŋ/", "meaning": "gây mệt mỏi, tốn sức", "synonym": "exhausting / fatiguing / demanding", "example": "Volunteering can be tiring sometimes, but it helps us find a purpose in life.", "wordFamily": [{"word": "tire", "pos": "(v)"}, {"word": "tired", "pos": "(adj)"}, {"word": "tiring", "pos": "(adj)"}]}, {"id": "u4_62", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "breadwinner", "pos": "(n)", "ipa": "/ˈbredwɪnə(r)/", "meaning": "trụ cột gia đình (người kiếm tiền chính)", "synonym": "provider / earner / supporter", "example": "In many traditional households, one parent acts as the sole breadwinner.", "wordFamily": []}, {"id": "u4_63", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "homemaker", "pos": "(n)", "ipa": "/ˈhəʊmmeɪkə(r)/", "meaning": "người nội trợ (chăm lo việc nhà)", "synonym": "housewife / househusband", "example": "One parent works while the other stays home as the homemaker.", "wordFamily": []}, {"id": "u4_64", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "remote areas", "pos": "(n.phr)", "ipa": "/rɪˈməʊt ˈeəriəz/", "meaning": "vùng sâu vùng xa, khu vực hẻo lánh", "synonym": "far-flung regions / isolated areas", "example": "Students can teach English to children in remote areas.", "wordFamily": [{"word": "remote", "pos": "(adj)"}, {"word": "remotely", "pos": "(adv)"}]}, {"id": "u4_65", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "far-flung", "pos": "(adj)", "ipa": "/ˌfɑː ˈflʌŋ/", "meaning": "xa xôi, hẻo lánh, cách trở", "synonym": "remote / distant / isolated", "example": "Young volunteers deliver humanitarian aid to far-flung and flooded regions.", "wordFamily": []}, {"id": "u4_66", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "gratitude", "pos": "(n)", "ipa": "/ˈɡrætɪtjuːd/", "meaning": "lòng biết ơn, sự tri ân", "synonym": "thankfulness / appreciation", "example": "Sharing daily routines fosters gratitude and keeps the family close-knit.", "wordFamily": [{"word": "gratitude", "pos": "(n)"}, {"word": "grateful", "pos": "(adj)"}]}, {"id": "u4_67", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "grateful", "pos": "(adj)", "ipa": "/ˈɡreɪtfl/", "meaning": "biết ơn, cảm kích", "synonym": "thankful / appreciative / indebted", "example": "We are always grateful for your continued support in community projects.", "wordFamily": [{"word": "grateful", "pos": "(adj)"}, {"word": "gratitude", "pos": "(n)"}]}, {"id": "u4_68", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "close-knit", "pos": "(adj)", "ipa": "/ˌkləʊs ˈnɪt/", "meaning": "gắn bó khăng khít, yêu thương đùm bọc nhau", "synonym": "tight-knit / united / bonded", "example": "Sharing chores reduces sibling rivalry and keeps the family close-knit.", "wordFamily": []}, {"id": "u4_69", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "hardship", "pos": "(n)", "ipa": "/ˈhɑːdʃɪp/", "meaning": "sự gian khổ, khó khăn thiếu thốn", "synonym": "adversity / difficulty / suffering", "example": "Many families in central Vietnam suffered severe hardship after heavy floods.", "wordFamily": []}, {"id": "u4_70", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "non-profit organisation", "pos": "(n.phr)", "ipa": "/ˌnɒn ˈprɒfɪt ˌɔːɡənaɪˈzeɪʃn/", "meaning": "tổ chức phi lợi nhuận", "synonym": "charity / NGO / non-commercial group", "example": "The Red Cross is a well-known non-profit organisation providing emergency aid.", "wordFamily": []}, {"id": "u4_71", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "non-governmental organisation", "pos": "(n.phr)", "ipa": "/ˌnɒn ˌɡʌvnˈmentl ˌɔːɡənaɪˈzeɪʃn/", "meaning": "tổ chức phi chính phủ (NGO)", "synonym": "NGO / independent charity", "example": "Save the Children is an international non-governmental organisation improving children's lives.", "wordFamily": []}, {"id": "u4_72", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "foster", "pos": "(v)", "ipa": "/ˈfɒstə(r)/", "meaning": "nuôi dưỡng, thúc đẩy, khuyến khích phát triển", "synonym": "encourage / nurture / promote", "example": "Volunteering can foster a sense of purpose and fulfillment.", "wordFamily": []}, {"id": "u4_73", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "well-being", "pos": "(n)", "ipa": "/ˈwel biːɪŋ/", "meaning": "sự khỏe mạnh, hạnh phúc và an lạc", "synonym": "welfare / health / happiness", "example": "Community activities can increase teenagers' self-confidence and boost their well-being.", "wordFamily": []}, {"id": "u4_74", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "self-esteem", "pos": "(n)", "ipa": "/ˌself ɪˈstiːm/", "meaning": "lòng tự trọng, sự tự tin vào giá trị bản thân", "synonym": "self-worth / self-confidence / pride", "example": "Social segregation can leave vulnerable people feeling withdrawn with low self-esteem.", "wordFamily": []}, {"id": "u4_75", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "suffer", "pos": "(v)", "ipa": "/ˈsʌfə(r)/", "meaning": "chịu đựng, gánh chịu, mắc phải", "synonym": "endure / experience / undergo", "example": "Many people suffer from lack of clean water in rural areas.", "wordFamily": [{"word": "suffer", "pos": "(v)"}, {"word": "suffering", "pos": "(n)"}]}, {"id": "u4_76", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "egalitarian", "pos": "(adj)", "ipa": "/iˌɡælɪˈteəriən/", "meaning": "bình đẳng, công bằng", "synonym": "equal / fair / democratic", "example": "In an egalitarian family, both parents share household chores and childcare equally.", "wordFamily": []}, {"id": "u4_77", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "campaign", "pos": "(v / n)", "ipa": "/kæmˈpeɪn/", "meaning": "vận động, đấu tranh / chiến dịch", "synonym": "advocate / crusade / drive", "example": "Youth clubs actively campaign for equal rights and inclusion.", "wordFamily": [{"word": "campaign", "pos": "(v/n)"}, {"word": "campaigner", "pos": "(n)"}]}, {"id": "u4_78", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "upbringing", "pos": "(n)", "ipa": "/ˈʌpbrɪŋɪŋ/", "meaning": "sự nuôi dưỡng, giáo dục từ thuở nhỏ", "synonym": "raising / nurture / rearing", "example": "A supportive upbringing during a child's formative years helps build confidence.", "wordFamily": []}, {"id": "u4_79", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "rewarding", "pos": "(adj)", "ipa": "/rɪˈwɔːdɪŋ/", "meaning": "bổ ích, xứng đáng, mang lại niềm vui tinh thần", "synonym": "fulfilling / satisfying / worthwhile", "example": "Volunteering at a local orphanage is a truly rewarding experience.", "wordFamily": [{"word": "reward", "pos": "(n/v)"}, {"word": "rewarding", "pos": "(adj)"}]}, {"id": "u4_80", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "overcome", "pos": "(v)", "ipa": "/ˌəʊvəˈkʌm/", "meaning": "vượt qua, khắc phục", "synonym": "conquer / surmount / defeat", "example": "Local charities work together to help poor communities overcome poverty.", "wordFamily": []}, {"id": "u4_81", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "sibling rivalry", "pos": "(n.phr)", "ipa": "/ˈsɪblɪŋ ˈraɪvlri/", "meaning": "sự ganh đua, tị nạnh giữa anh chị em trong nhà", "synonym": "brother-sister competition", "example": "Fairly sharing chores at home can reduce sibling rivalry between brothers and sisters.", "wordFamily": []}, {"id": "u4_82", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "impairment", "pos": "(n)", "ipa": "/ɪmˈpeəmənt/", "meaning": "sự suy giảm chức năng, khuyết tật", "synonym": "disability / handicap", "example": "Students come into contact with individuals with physical or sensory impairments.", "wordFamily": [{"word": "impair", "pos": "(v)"}, {"word": "impairment", "pos": "(n)"}]}, {"id": "u4_83", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "integrate", "pos": "(v)", "ipa": "/ˈɪntɪɡreɪt/", "meaning": "hòa nhập, hội nhập", "synonym": "assimilate / blend in / join", "example": "Helping vulnerable people integrate into society is not always easy.", "wordFamily": [{"word": "integrate", "pos": "(v)"}, {"word": "integration", "pos": "(n)"}]}, {"id": "u4_84", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "resilience", "pos": "(n)", "ipa": "/rɪˈzɪliəns/", "meaning": "khả năng phục hồi, sự kiên cường vượt khó", "synonym": "toughness / adaptability / strength", "example": "A supportive upbringing helps build confidence and emotional resilience.", "wordFamily": [{"word": "resilient", "pos": "(adj)"}, {"word": "resilience", "pos": "(n)"}]}, {"id": "u4_85", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "work ethic", "pos": "(n.phr)", "ipa": "/ˈwɜːk eθɪk/", "meaning": "đạo đức lao động, tinh thần làm việc chăm chỉ", "synonym": "diligence / industriousness / conscientiousness", "example": "Doing housework teaches teenagers a strong work ethic and prepares them for adulthood.", "wordFamily": []}, {"id": "u4_86", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "humanitarian aid", "pos": "(n.phr)", "ipa": "/hjuːˌmænɪˈteəriən eɪd/", "meaning": "viện trợ nhân đạo, cứu trợ khẩn cấp", "synonym": "relief aid / charity assistance", "example": "Thousands of students volunteer every year to deliver humanitarian aid to flooded regions.", "wordFamily": [{"word": "humanitarian", "pos": "(adj/n)"}]}, {"id": "u4_87", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "entitlement complex", "pos": "(n.phr)", "ipa": "/ɪnˈtaɪtlmənt ˈkɒmpleks/", "meaning": "tâm lý ỷ lại, cho rằng mình đương nhiên được hưởng thụ", "synonym": "sense of entitlement", "example": "Children who never do chores may develop an entitlement complex.", "wordFamily": []}, {"id": "u4_88", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "juggle", "pos": "(v)", "ipa": "/ˈdʒʌɡl/", "meaning": "xoay xở, cân bằng nhiều công việc cùng lúc", "synonym": "balance / manage / handle", "example": "Working parents often struggle to juggle their full-time jobs and family commitments.", "wordFamily": []}, {"id": "u4_89", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "exempt", "pos": "(v / adj)", "ipa": "/ɪɡˈzempt/", "meaning": "miễn trừ (khỏi nghĩa vụ/trách nhiệm)", "synonym": "excuse / free / release", "example": "Children who are exempted from all housework often grow up lacking basic life skills.", "wordFamily": [{"word": "exempt", "pos": "(v/adj)"}, {"word": "exemption", "pos": "(n)"}]}, {"id": "u4_90", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "perceive", "pos": "(v)", "ipa": "/pəˈsiːv/", "meaning": "nhận thức, nhìn nhận, coi là", "synonym": "view / regard / see", "example": "Volunteers are often perceived as giving a person's life new meaning and purpose.", "wordFamily": [{"word": "perceive", "pos": "(v)"}, {"word": "perception", "pos": "(n)"}]}, {"id": "u4_91", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "crave", "pos": "(v)", "ipa": "/kreɪv/", "meaning": "khao khát, mong mỏi thiết tha", "synonym": "long for / yearn for / desire", "example": "Survivors often crave security and comfort after experiencing natural disasters.", "wordFamily": [{"word": "crave", "pos": "(v)"}, {"word": "craving", "pos": "(n)"}]}, {"id": "u4_92", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "buffer", "pos": "(n / v)", "ipa": "/ˈbʌfə(r)/", "meaning": "lá chắn bảo vệ, vùng đệm giảm căng thẳng", "synonym": "shield / cushion / safeguard", "example": "Community service acts as a buffer against stress on a student's mental health.", "wordFamily": []}, {"id": "u4_93", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "knock-on effect", "pos": "(n.phr)", "ipa": "/ˈnɒk ɒn ɪˌfekt/", "meaning": "hiệu ứng dây chuyền, tác động lan tỏa", "synonym": "ripple effect / chain reaction", "example": "Ultimately, community service creates a powerful knock-on effect.", "wordFamily": []}, {"id": "u4_94", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "ripple effect", "pos": "(n.phr)", "ipa": "/ˈrɪpl ɪˌfekt/", "meaning": "hiệu ứng gợn sóng, sức lan tỏa tích cực", "synonym": "knock-on effect / snowball effect", "example": "You will help create a positive ripple effect by investing in local organizations.", "wordFamily": []}, {"id": "u4_95", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "ordeal", "pos": "(n)", "ipa": "/ɔːˈdiːl/", "meaning": "thử thách khắc nghiệt, cơn hoạn nạn đau thương", "synonym": "trial / hardship / trauma", "example": "Many disadvantaged individuals have endured painful ordeals.", "wordFamily": []}, {"id": "u4_96", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "plaudit", "pos": "(n)", "ipa": "/ˈplɔːdɪt/", "meaning": "lời khen ngợi, sự tán dương công khai", "synonym": "praise / acclaim / applause", "example": "Even though true volunteers rarely seek public plaudits, society views their efforts favourably.", "wordFamily": []}, {"id": "u4_97", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "segregation", "pos": "(n)", "ipa": "/ˌseɡrɪˈɡeɪʃn/", "meaning": "sự tách biệt, sự cô lập xã hội", "synonym": "separation / isolation / division", "example": "Discriminatory attitudes or social segregation can leave people feeling withdrawn.", "wordFamily": [{"word": "segregate", "pos": "(v)"}]}, {"id": "u4_98", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "apathetic", "pos": "(adj)", "ipa": "/ˌæpəˈθetɪk/", "meaning": "thờ ơ, lãnh đạm, vô cảm", "synonym": "indifferent / unconcerned / uncaring", "example": "Instead of feeling apathetic toward social problems, young people should help others.", "wordFamily": [{"word": "apathy", "pos": "(n)"}, {"word": "apathetic", "pos": "(adj)"}]}, {"id": "u4_99", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "harness", "pos": "(v)", "ipa": "/ˈhɑːnɪs/", "meaning": "khai thác, tận dụng, phát huy (năng lượng/tiềm năng)", "synonym": "utilize / channel / employ", "example": "Young people learn to harness their energy to turn personal gratitude into social change.", "wordFamily": []}, {"id": "u4_100", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "domestic", "pos": "(adj)", "ipa": "/dəˈmestɪk/", "meaning": "thuộc về gia đình, nội trợ, trong nước", "synonym": "household / home / family", "example": "More families adopt an egalitarian lifestyle where everyone pitches in with domestic tasks.", "wordFamily": []}, {"id": "u4_101", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "formative years", "pos": "(n.phr)", "ipa": "/ˈfɔːmətɪv jɪəz/", "meaning": "những năm tháng đầu đời hình thành nhân cách", "synonym": "childhood / early years / developmental stage", "example": "Assigning age-appropriate chores during a child's formative years is essential.", "wordFamily": []}, {"id": "u4_102", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "heavy lifting", "pos": "(n.phr)", "ipa": "/ˌhevi ˈlɪftɪŋ/", "meaning": "công việc mang vác nặng nhọc", "synonym": "strenuous physical work", "example": "When teenagers help with the heavy lifting, they develop a sense of belonging.", "wordFamily": []}, {"id": "u4_103", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "sense of belonging", "pos": "(n.phr)", "ipa": "/sens əv bɪˈlɒŋɪŋ/", "meaning": "cảm giác gắn kết, thuộc về một tập thể/gia đình", "synonym": "acceptance / connectedness / unity", "example": "Volunteering addresses our need to belong and creates a true sense of belonging.", "wordFamily": []}, {"id": "u4_104", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "instil", "pos": "(v)", "ipa": "/ɪnˈstɪl/", "meaning": "thấm nhuần, truyền thụ dần (đức tính, giá trị)", "synonym": "inculcate / implant / impart", "example": "When parents instil values like empathy early on, teens care more about others.", "wordFamily": []}, {"id": "u4_105", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "adolescent", "pos": "(n / adj)", "ipa": "/ˌædəˈlesnt/", "meaning": "thanh thiếu niên / ở tuổi vị thành niên", "synonym": "teenager / youth / young person", "example": "Adolescents are less likely to become apathetic when raised with empathy.", "wordFamily": [{"word": "adolescent", "pos": "(n/adj)"}, {"word": "adolescence", "pos": "(n)"}]}, {"id": "u4_106", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "endure", "pos": "(v)", "ipa": "/ɪnˈdjʊə(r)/", "meaning": "chịu đựng, trải qua (khó khăn, thử thách)", "synonym": "suffer / withstand / bear", "example": "Many disadvantaged individuals have endured painful ordeals.", "wordFamily": [{"word": "endure", "pos": "(v)"}, {"word": "endurance", "pos": "(n)"}]}, {"id": "u4_107", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "discriminatory", "pos": "(adj)", "ipa": "/dɪˌskrɪmɪˈnətəri/", "meaning": "mang tính phân biệt đối xử, kỳ thị", "synonym": "prejudiced / biased / unfair", "example": "Volunteers stand up against discriminatory attitudes in society.", "wordFamily": [{"word": "discriminate", "pos": "(v)"}, {"word": "discrimination", "pos": "(n)"}, {"word": "discriminatory", "pos": "(adj)"}]}, {"id": "u4_108", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "withdrawn", "pos": "(adj)", "ipa": "/wɪðˈdrɔːn/", "meaning": "thu mình, khép kín, ít giao tiếp", "synonym": "introverted / shy / isolated", "example": "Social segregation can leave vulnerable people feeling withdrawn.", "wordFamily": []}, {"id": "u4_109", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "inclusion", "pos": "(n)", "ipa": "/ɪnˈkluːʒn/", "meaning": "sự hòa nhập, sự bao gồm mọi đối tượng", "synonym": "integration / acceptance / involvement", "example": "By treating everyone respectfully and campaigning for inclusion, volunteers boost confidence.", "wordFamily": [{"word": "include", "pos": "(v)"}, {"word": "inclusive", "pos": "(adj)"}, {"word": "inclusion", "pos": "(n)"}]}, {"id": "u4_110", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "forge", "pos": "(v)", "ipa": "/fɔːdʒ/", "meaning": "tạo dựng, gắn kết bền chặt (tình bạn/mối quan hệ)", "synonym": "build / form / establish", "example": "Volunteers forge lasting friendships and gain practical life-saving skills.", "wordFamily": []}, {"id": "u4_111", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "immeasurable", "pos": "(adj)", "ipa": "/ɪˈmeʒərəbl/", "meaning": "vô bờ bến, không thể đo đếm được", "synonym": "boundless / immense / vast", "example": "Volunteers experience an immeasurable sense of satisfaction.", "wordFamily": []}, {"id": "u4_112", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "favourably", "pos": "(adv)", "ipa": "/ˈfeɪvərəbli/", "meaning": "một cách thiện cảm, tích cực, thuận lợi", "synonym": "positively / approvingly / well", "example": "Society views the efforts of young volunteers very favourably.", "wordFamily": [{"word": "favour", "pos": "(n/v)"}, {"word": "favourable", "pos": "(adj)"}, {"word": "favourably", "pos": "(adv)"}]}, {"id": "u4_113", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "disadvantaged", "pos": "(adj)", "ipa": "/ˌdɪsədˈvɑːntɪdʒd/", "meaning": "thiệt thòi, kém may mắn", "synonym": "underprivileged / deprived / needy", "example": "The program supports students from disadvantaged backgrounds.", "wordFamily": [{"word": "disadvantage", "pos": "(n)"}, {"word": "disadvantaged", "pos": "(adj)"}]}, {"id": "u4_114", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "underprivileged", "pos": "(adj)", "ipa": "/ˌʌndəˈprɪvəlɪdʒd/", "meaning": "thiếu thốn, kém may mắn", "synonym": "disadvantaged / impoverished / needy", "example": "I am planning to join a free teaching program for underprivileged students.", "wordFamily": []}, {"id": "u4_115", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "crucial", "pos": "(adj)", "ipa": "/ˈkruːʃl/", "meaning": "quan trọng cốt yếu, quyết định", "synonym": "essential / vital / critical", "example": "Volunteers play a crucial role in addressing unmet needs within communities.", "wordFamily": []}, {"id": "u4_116", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "vulnerable", "pos": "(adj)", "ipa": "/ˈvʌlnərəbl/", "meaning": "dễ bị tổn thương, yếu thế", "synonym": "helpless / defenseless / at risk", "example": "Volunteers provide essential assistance to vulnerable populations.", "wordFamily": [{"word": "vulnerable", "pos": "(adj)"}, {"word": "vulnerability", "pos": "(n)"}]}, {"id": "u4_117", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "plight", "pos": "(n)", "ipa": "/plaɪt/", "meaning": "hoàn cảnh khó khăn, tình cảnh đáng thương", "synonym": "difficulty / predicament / hardship", "example": "The newspaper highlights the plight of individuals who are down on their luck.", "wordFamily": []}, {"id": "u4_118", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "diversity", "pos": "(n)", "ipa": "/daɪˈvɜːsəti/", "meaning": "sự đa dạng", "synonym": "variety / multiplicity / difference", "example": "Donors from all walks of life reflect the diversity of New York City.", "wordFamily": [{"word": "diverse", "pos": "(adj)"}, {"word": "diversity", "pos": "(n)"}]}, {"id": "u4_119", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "selfless", "pos": "(adj)", "ipa": "/ˈselfləs/", "meaning": "vị tha, không ích kỷ, quên mình vì người khác", "synonym": "altruistic / unselfish / generous", "example": "The act of volunteering is selfless and can make a significant difference.", "wordFamily": [{"word": "selfless", "pos": "(adj)"}, {"word": "selflessness", "pos": "(n)"}]}, {"id": "u4_120", "part": "Phần 2: Từ vựng nâng cao A2 - B1+ (Unit 4)", "word": "fulfillment", "pos": "(n)", "ipa": "/fʊlˈfɪlmənt/", "meaning": "sự mãn nguyện, cảm giác trọn vẹn ý nghĩa", "synonym": "satisfaction / gratification / contentment", "example": "Volunteering can foster a sense of purpose and personal fulfillment.", "wordFamily": [{"word": "fulfill", "pos": "(v)"}, {"word": "fulfilling", "pos": "(adj)"}, {"word": "fulfillment", "pos": "(n)"}]}, {"id": "u4_121", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "pitch in", "pos": "(phr.v)", "ipa": "/pɪtʃ ɪn/", "meaning": "chung tay, góp sức làm cùng nhau", "synonym": "chip in / help out / cooperate", "example": "Today, more families adopt an egalitarian lifestyle where everyone pitches in with domestic tasks.", "wordFamily": []}, {"id": "u4_122", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "take for granted", "pos": "(idm)", "ipa": "/teɪk fə ˈɡrɑːntɪd/", "meaning": "coi là điều hiển nhiên, không biết trân trọng", "synonym": "undervalue / overlook / fail to appreciate", "example": "Teenagers should not take a clean house and warm meals for granted.", "wordFamily": []}, {"id": "u4_123", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "get involved in", "pos": "(phr.v)", "ipa": "/ɡet ɪnˈvɒlvd ɪn/", "meaning": "tham gia vào, dấn thân vào", "synonym": "participate in / take part in / engage in", "example": "Students can get involved in community development projects.", "wordFamily": []}, {"id": "u4_124", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "participate in", "pos": "(phr.v)", "ipa": "/pɑːˈtɪsɪpeɪt ɪn/", "meaning": "tham gia vào", "synonym": "take part in / join in / engage in", "example": "All citizens are encouraged to participate in local decision-making meetings.", "wordFamily": []}, {"id": "u4_125", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "apply for", "pos": "(phr.v)", "ipa": "/əˈplaɪ fɔː(r)/", "meaning": "nộp đơn xin (việc, học bổng, vị trí tình nguyện)", "synonym": "put in for / request / seek", "example": "Students are encouraged to apply for the community service scholarship.", "wordFamily": []}, {"id": "u4_126", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "wait on hand and foot", "pos": "(idm)", "ipa": "/weɪt ɒn hænd ənd fʊt/", "meaning": "phục vụ tận răng, chiều chuộng hết mực", "synonym": "pamper / spoil / serve constantly", "example": "When parents wait on their children hand and foot, the kids may become lazy.", "wordFamily": []}, {"id": "u4_127", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "grow apart", "pos": "(phr.v)", "ipa": "/ɡrəʊ əˈpɑːt/", "meaning": "dần trở nên xa cách nhau", "synonym": "drift apart / become estranged", "example": "When family members rarely communicate, they can easily grow apart.", "wordFamily": []}, {"id": "u4_128", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "lighten the load", "pos": "(idm)", "ipa": "/ˈlaɪtn ðə ləʊd/", "meaning": "giảm bớt gánh nặng công việc", "synonym": "ease the burden / share the work", "example": "Sharing daily chores lightens the load for working parents.", "wordFamily": []}, {"id": "u4_129", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "come into contact with", "pos": "(idm)", "ipa": "/kʌm ˈɪntə ˈkɒntækt wɪð/", "meaning": "tiếp xúc, gặp gỡ, giao lưu với", "synonym": "meet / encounter / interact with", "example": "Through these projects, students come into contact with people from various backgrounds.", "wordFamily": []}, {"id": "u4_130", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "look forward to", "pos": "(phr.v)", "ipa": "/lʊk ˈfɔːwəd tə/", "meaning": "mong đợi, háo hức chờ đón (+ V-ing)", "synonym": "anticipate / eagerly await", "example": "We are all looking forward to welcoming everyone this Saturday.", "wordFamily": []}, {"id": "u4_131", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "in case of", "pos": "(phr)", "ipa": "/ɪn keɪs əv/", "meaning": "phòng khi, trong trường hợp xảy ra", "synonym": "in the event of / prepared for", "example": "Store extra water bottles in case of sudden power cuts or water shortages.", "wordFamily": []}, {"id": "u4_132", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "in need", "pos": "(phr)", "ipa": "/ɪn niːd/", "meaning": "đang gặp khó khăn, cần được giúp đỡ", "synonym": "needy / disadvantaged / impoverished", "example": "We organise charity concerts to raise funds for communities in need.", "wordFamily": []}, {"id": "u4_133", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "be located in", "pos": "(v.phr)", "ipa": "/bi ləʊˈkeɪtɪd ɪn/", "meaning": "tọa lạc tại, nằm ở vị trí", "synonym": "be situated in / be based in", "example": "Our charity office is located in a quiet area near the public library.", "wordFamily": []}, {"id": "u4_134", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "keep a record", "pos": "(v.phr)", "ipa": "/kiːp ə ˈrekɔːd/", "meaning": "ghi chép, lưu giữ hồ sơ/sổ sách", "synonym": "document / log / track", "example": "Volunteers should keep a record of their working hours for certification.", "wordFamily": []}, {"id": "u4_135", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "sense of purpose", "pos": "(n.phr)", "ipa": "/sens əv ˈpɜːpəs/", "meaning": "ý thức về mục đích sống, lẽ sống", "synonym": "direction / meaning / motivation", "example": "The training program gave students a real sense of purpose in their careers.", "wordFamily": []}, {"id": "u4_136", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "search for", "pos": "(phr.v)", "ipa": "/sɜːtʃ fɔː(r)/", "meaning": "tìm kiếm", "synonym": "look for / seek / hunt for", "example": "Volunteers helped police search for missing residents after the landslide.", "wordFamily": []}, {"id": "u4_137", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "carry out", "pos": "(phr.v)", "ipa": "/ˈkæri aʊt/", "meaning": "tiến hành, thực hiện (kế hoạch/sửa chữa)", "synonym": "conduct / execute / perform", "example": "We need to carry out repairs before the rainy season begins.", "wordFamily": []}, {"id": "u4_138", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "focus on", "pos": "(phr.v)", "ipa": "/ˈfəʊkəs ɒn/", "meaning": "tập trung vào", "synonym": "concentrate on / emphasize", "example": "This year, we will focus on improving access to education in rural areas.", "wordFamily": []}, {"id": "u4_139", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "fill in", "pos": "(phr.v)", "ipa": "/fɪl ɪn/", "meaning": "điền thông tin vào (mẫu đơn)", "synonym": "complete / fill out", "example": "Please fill in this application form for the volunteer program.", "wordFamily": []}, {"id": "u4_140", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "prepare for", "pos": "(phr.v)", "ipa": "/prɪˈpeə(r) fɔː(r)/", "meaning": "chuẩn bị cho", "synonym": "get ready for / plan for", "example": "Volunteers are training to prepare for the upcoming disaster relief mission.", "wordFamily": []}, {"id": "u4_141", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "suffer from", "pos": "(phr.v)", "ipa": "/ˈsʌfə(r) frɒm/", "meaning": "chịu đựng, mắc phải (bệnh tật/thiếu thốn)", "synonym": "experience / endure / be affected by", "example": "The charity is dedicated to helping children suffering from serious illnesses.", "wordFamily": []}, {"id": "u4_142", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "raise money", "pos": "(v.phr)", "ipa": "/reɪz ˈmʌni/", "meaning": "gây quỹ, quyên góp tiền", "synonym": "fundraise / collect funds", "example": "The community organised a fair to raise money for children affected by the earthquake.", "wordFamily": []}, {"id": "u4_143", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "by chance", "pos": "(phr)", "ipa": "/baɪ tʃɑːns/", "meaning": "tình cờ, ngẫu nhiên", "synonym": "accidentally / by coincidence / unexpectedly", "example": "I met my old friend purely by chance while shopping in the city.", "wordFamily": []}, {"id": "u4_144", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "by accident", "pos": "(phr)", "ipa": "/baɪ ˈæksɪdənt/", "meaning": "vô tình, không cố ý", "synonym": "unintentionally / by mistake", "example": "He broke the window by accident when playing football in the garden.", "wordFamily": []}, {"id": "u4_145", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "by coincidence", "pos": "(phr)", "ipa": "/baɪ kəʊˈɪnsɪdəns/", "meaning": "trùng hợp ngẫu nhiên", "synonym": "by chance / coincidentally", "example": "We both chose the same seat completely by coincidence.", "wordFamily": []}, {"id": "u4_146", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "give back", "pos": "(phr.v)", "ipa": "/ɡɪv bæk/", "meaning": "đền đáp, cống hiến lại cho cộng đồng", "synonym": "contribute back / repay society", "example": "Volunteering is a wonderful way of giving back to the community.", "wordFamily": []}, {"id": "u4_147", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "make a difference", "pos": "(idm)", "ipa": "/meɪk ə ˈdɪfrəns/", "meaning": "tạo nên sự khác biệt tích cực", "synonym": "have a positive impact / matter", "example": "These small acts of kindness will make a difference and spread positive emotions.", "wordFamily": []}, {"id": "u4_148", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "set up", "pos": "(phr.v)", "ipa": "/set ʌp/", "meaning": "thành lập, thiết lập (câu lạc bộ/tổ chức)", "synonym": "establish / found / launch", "example": "Teenagers may set up volunteer clubs at their schools.", "wordFamily": []}, {"id": "u4_149", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "dispose of", "pos": "(phr.v)", "ipa": "/dɪˈspəʊz əv/", "meaning": "vứt bỏ, xử lý rác thải", "synonym": "get rid of / discard / throw away", "example": "You can participate in community projects like painting old buildings or disposing of trash.", "wordFamily": []}, {"id": "u4_150", "part": "Phần 3: Cụm động từ & Thành ngữ Unit 4", "word": "pay it forward", "pos": "(idm)", "ipa": "/peɪ ɪt ˈfɔːwəd/", "meaning": "lan tỏa lòng tốt (nhận sự giúp đỡ rồi tiếp tục giúp người khác)", "synonym": "pass on kindness / repay kindness to others", "example": "Those who have received support are more likely to pay it forward, creating a cycle of positive change.", "wordFamily": []}], "grammarNotes": [{"id": "g_u4_1", "title": "1. Thì Quá Khứ Đơn (Past Simple)", "usage": "Diễn tả hành động đã xảy ra và chấm dứt hoàn toàn trong quá khứ, không còn liên quan tới hiện tại; diễn tả chuỗi hành động xảy ra nối tiếp nhau hoặc hồi ức, kỷ niệm.", "formula": "(+) S + V2/ed (to be: was/were)\n(-) S + did not (didn't) + V(bare) | S + was/were + not\n(?) Did + S + V(bare)? | Was/Were + S + ...?", "signals": "yesterday, last (week/month/year), ... ago, in + mốc thời gian quá khứ (in 2008, in 1990...)"}, {"id": "g_u4_2", "title": "2. Thì Quá Khứ Tiếp Diễn (Past Continuous)", "usage": "Diễn tả hành động đang xảy ra tại một thời điểm xác định trong quá khứ.", "formula": "(+) S + was/were + V-ing\n(-) S + was/were + not + V-ing\n(?) Was/Were + S + V-ing?", "signals": "giờ + trạng từ quá khứ (at 3 p.m. yesterday, at 9 a.m. yesterday), at this/that time + trạng từ quá khứ (at this time last week...)"}, {"id": "g_u4_3", "title": "3. Kết Hợp Quá Khứ Đơn & Quá Khứ Tiếp Diễn (When / While)", "usage": "• Hai hành động xảy ra song song đồng thời trong quá khứ: Past Continuous + while + Past Continuous.\n• Một hành động đang diễn ra (Past Continuous) thì có hành động khác bất ngờ xen vào (Past Simple) với When / While.", "formula": "Song song: S + was/were + V-ing + while + S + was/were + V-ing\nXen vào: When + S + V2/ed, S + was/were + V-ing (hoặc While + S + was/were + V-ing, S + V2/ed)", "signals": "when, while, as, just as, at the same time"}], "grammarQuestions": [{"id": "gq_1", "question": "When they ______ the rubbish on the road, they ______ a lot of homeless people.", "options": ["collected – met", "collected – were meeting", "were collecting – were meeting", "were collecting – met"], "answer": "were collecting – met", "explanation": "Hành động đang thu gom rác (QKTD) thì hành động gặp người vô gia cư xen vào (QKĐ)."}, {"id": "gq_2", "question": "When I first saw Miriam, I ______ her to come in for tea and we talked for nearly two hours.", "options": ["invited", "invite", "have invited", "was inviting"], "answer": "invited", "explanation": "Chuỗi hành động kể lại sự việc đã xảy ra và kết thúc trong quá khứ dùng Quá khứ đơn."}, {"id": "gq_3", "question": "The girls were chatting ______ the boys were playing games.", "options": ["when", "while", "during", "at the same time"], "answer": "while", "explanation": "Diễn tả hai hành động xảy ra song song đồng thời trong quá khứ dùng 'while'."}, {"id": "gq_4", "question": "______ to have lunch at 12 o'clock every day?", "options": ["Did she used", "Was she used", "Has she used", "Did she use"], "answer": "Did she use", "explanation": "Câu nghi vấn với cấu trúc 'used to + V(bare)' mượn trợ động từ Did + S + use to."}, {"id": "gq_5", "question": "The children ______ to the zoo.", "options": ["were enjoyed taken", "were enjoyed taking", "enjoyed being taken", "enjoyed taking"], "answer": "enjoyed being taken", "explanation": "Sau 'enjoy' dùng V-ing; trẻ em được đưa đi sở thú nên dùng dạng bị động 'being taken'."}, {"id": "gq_6", "question": "It ______ to rain while we ______ home from school.", "options": ["started – were walking", "was starting – were walking", "started – walked", "was starting – walked"], "answer": "started – were walking", "explanation": "Đang đi bộ về nhà (QKTD) thì trời bất ngờ đổ mưa (QKĐ)."}, {"id": "gq_7", "question": "While I ______ for him to call up, he ______ a good time in the bar.", "options": ["was waited – was waiting", "waited – was having", "was waiting – was having", "was waiting – had"], "answer": "was waiting – was having", "explanation": "Hai hành động diễn ra song song trong cùng khoảng thời gian quá khứ dùng QKTD."}, {"id": "gq_8", "question": "I ______ in the queue when I ______ that I had lost my wallet.", "options": ["was standing – realized", "stood – was realizing", "stood – realized", "was standing – was realizing"], "answer": "was standing – realized", "explanation": "Đang đứng xếp hàng (QKTD) thì chợt nhận ra bị mất ví (QKĐ)."}, {"id": "gq_9", "question": "When the robbery ______, the safeguard ______!", "options": ["was happening – was sleeping", "happened – was sleeping", "happened – slept", "was happening – slept"], "answer": "happened – was sleeping", "explanation": "Khi vụ cướp xảy ra (QKĐ) thì bảo vệ đang ngủ (QKTD)."}, {"id": "gq_10", "part": "Ngữ pháp Unit 4", "question": "While we ______ information for our presentation last month, we discovered that lots of people in our neighbourhood needed help.", "options": ["were collecting", "are collecting", "collect", "collected"], "answer": "were collecting", "explanation": "Hành động đang diễn ra trong quá khứ sau 'while' chia Quá khứ tiếp diễn."}, {"id": "gq_11", "question": "When we visited Mrs Lan this morning, she ______ her lunch.", "options": ["is preparing", "was preparing", "has prepared", "prepares"], "answer": "was preparing", "explanation": "Khi chúng tôi đến thăm (QKĐ), bà Lan đang chuẩn bị bữa trưa (QKTD)."}, {"id": "gq_12", "question": "She told us her life story while we ______ her tidy the house.", "options": ["are helping", "have helped", "were helping", "help"], "answer": "were helping", "explanation": "Hành động đang diễn ra trong quá khứ sau 'while' chia 'were helping'."}, {"id": "gq_13", "question": "While we were cleaning her kitchen, we ______ a knock at the door.", "options": ["are hearing", "were hearing", "hear", "heard"], "answer": "heard", "explanation": "Đang dọn bếp (QKTD) thì nghe thấy tiếng gõ cửa (QKĐ)."}, {"id": "gq_14", "question": "While we ______ at the food bank, we met an old friend.", "options": ["were helping", "are helping", "help", "helped"], "answer": "were helping", "explanation": "Đang làm tình nguyện tại ngân hàng thực phẩm (QKTD) thì gặp bạn cũ (QKĐ)."}, {"id": "gq_15", "question": "When we came to the local orphanage, all the children there ______ their dinner.", "options": ["are having", "were having", "have had", "have"], "answer": "were having", "explanation": "Khi chúng tôi tới trại trẻ mồ côi (QKĐ), các em nhỏ đang ăn tối (QKTD)."}, {"id": "gq_16", "question": "Last weekend, volunteers ______ food packages while others ______ broken benches in the playground.", "options": ["distributed – were repairing", "were distributing – repaired", "distribute – were repairing", "were distributing – were repairing"], "answer": "were distributing – were repairing", "explanation": "Hai nhóm tình nguyện viên làm hai việc song song cùng lúc dùng QKTD ở cả hai vế."}, {"id": "gq_17", "question": "As we ______ trees along the riverbank, we found an injured bird and took it to the vet.", "options": ["planted", "were planting", "plant", "have planted"], "answer": "were planting", "explanation": "Đang trồng cây dọc bờ sông (QKTD) thì phát hiện chú chim bị thương (QKĐ)."}, {"id": "gq_18", "question": "At 9 a.m. yesterday, the volunteers ______ food to the elderly when it suddenly started to rain heavily.", "options": ["distributed", "distribute", "were distributing", "have distributed"], "answer": "were distributing", "explanation": "Có mốc giờ xác định trong quá khứ 'At 9 a.m. yesterday' và hành động xen vào dùng QKTD."}, {"id": "gq_19", "question": "This time last Sunday, we ______ rubbish near the river to make the area cleaner for the festival.", "options": ["collected", "were collecting", "collect", "have collected"], "answer": "were collecting", "explanation": "Dấu hiệu 'This time last Sunday' (vào giờ này Chủ nhật trước) chia Quá khứ tiếp diễn."}, {"id": "gq_20", "question": "Just as the team was delivering food to the shelter, a heavy rain ______ suddenly.", "options": ["began", "begins", "begin", "beginning"], "answer": "began", "explanation": "Hành động cơn mưa bất ngờ ập tới xen vào hành động đang giao đồ ăn chia Quá khứ đơn."}]}, "Unit 5: Inventions": {"vocab": [{"id": "u5_1", "part": "Từ vựng Unit 5", "word": "artificial intelligence", "pos": "(n.phr)", "ipa": "/ˌɑːtɪfɪʃl ɪnˈtelɪdʒəns/", "meaning": "trí tuệ nhân tạo (AI)", "synonym": "machine intelligence / AI", "example": "Artificial intelligence is transforming modern education and healthcare.", "wordFamily": []}, {"id": "u5_2", "part": "Từ vựng Unit 5", "word": "device", "pos": "(n)", "ipa": "/dɪˈvaɪs/", "meaning": "thiết bị", "synonym": "gadget / appliance / tool", "example": "Smartphones are the most popular electronic devices today.", "wordFamily": []}, {"id": "u5_3", "part": "Từ vựng Unit 5", "word": "convenient", "pos": "(adj)", "ipa": "/kənˈviːniənt/", "meaning": "tiện lợi", "synonym": "handy / practical / accessible", "example": "E-books are very convenient because you can carry hundreds of them.", "wordFamily": [{"word": "convenient", "pos": "(adj)"}, {"word": "convenience", "pos": "(n)"}]}, {"id": "u5_4", "part": "Từ vựng Unit 5", "word": "experiment", "pos": "(n / v)", "ipa": "/ɪkˈsperɪmənt/", "meaning": "thí nghiệm / làm thí nghiệm", "synonym": "test / trial / investigation", "example": "Scientists conducted many experiments before inventing the vaccine.", "wordFamily": [{"word": "experiment", "pos": "(n/v)"}, {"word": "experimental", "pos": "(adj)"}]}, {"id": "u5_5", "part": "Từ vựng Unit 5", "word": "valuable", "pos": "(adj)", "ipa": "/ˈvæljuəbl/", "meaning": "quý giá, hữu ích", "synonym": "precious / useful / worthwhile", "example": "The Internet is a valuable tool for self-study.", "wordFamily": [{"word": "value", "pos": "(n/v)"}, {"word": "valuable", "pos": "(adj)"}]}, {"id": "u5_6", "part": "Từ vựng Unit 5", "word": "driverless", "pos": "(adj)", "ipa": "/ˈdraɪvələs/", "meaning": "không người lái", "synonym": "autonomous / self-driving", "example": "Driverless cars use sensors and AI to navigate city streets.", "wordFamily": []}], "grammarNotes": [{"id": "g_u5_1", "title": "Thì Hiện Tại Hoàn Thành (Present Perfect) & Danh Động Từ (Gerund) vs. To-Infinitive", "usage": "• Present Perfect: Hành động bắt đầu trong quá khứ kéo dài đến hiện tại hoặc vừa xảy ra.\n• Gerund (V-ing): Dùng làm chủ ngữ hoặc sau enjoy, avoid, mind, suggest, finish.\n• To-infinitive: Dùng chỉ mục đích hoặc sau It + be + adj.", "formula": "S + have/has + V3/ed | It is + adj + to V_bare", "signals": "since, for, just, already, yet, ever, never, recently, so far"}], "grammarQuestions": [{"id": "gq_u5_1", "question": "Smartphones ______ an essential part of our daily lives since the 2010s.", "options": ["became", "have become", "become", "are becoming"], "answer": "have become", "explanation": "Có 'since the 2010s' nên chia thì Hiện tại hoàn thành."}, {"id": "gq_u5_2", "question": "______ educational apps helps students review vocabulary anywhere.", "options": ["Using", "Use", "Used", "To using"], "answer": "Using", "explanation": "Danh động từ (V-ing) đứng đầu câu làm chủ ngữ."}]}, "Unit 6: Gender Equality": {"vocab": [{"id": "u6_1", "part": "Từ vựng Unit 6", "word": "gender equality", "pos": "(n.phr)", "ipa": "/ˈdʒendə iˈkwɒləti/", "meaning": "bình đẳng giới", "synonym": "sexual equality / equal rights", "example": "Promoting gender equality gives women and men equal opportunities.", "wordFamily": []}, {"id": "u6_2", "part": "Từ vựng Unit 6", "word": "surgeon", "pos": "(n)", "ipa": "/ˈsɜːdʒən/", "meaning": "bác sĩ phẫu thuật", "synonym": "operating doctor / specialist", "example": "She overcame stereotypes to become a leading heart surgeon.", "wordFamily": [{"word": "surgeon", "pos": "(n)"}, {"word": "surgery", "pos": "(n)"}]}, {"id": "u6_3", "part": "Từ vựng Unit 6", "word": "domestic violence", "pos": "(n.phr)", "ipa": "/dəˌmestɪk ˈvaɪələns/", "meaning": "bạo lực gia đình", "synonym": "family abuse", "example": "Laws must strictly protect victims of domestic violence.", "wordFamily": []}, {"id": "u6_4", "part": "Từ vựng Unit 6", "word": "child marriage", "pos": "(n.phr)", "ipa": "/ˈtʃaɪld mærɪdʒ/", "meaning": "tảo hôn", "synonym": "underage marriage", "example": "Education is the key to ending child marriage in rural regions.", "wordFamily": []}, {"id": "u6_5", "part": "Từ vựng Unit 6", "word": "treat", "pos": "(v)", "ipa": "/triːt/", "meaning": "đối xử, điều trị", "synonym": "handle / deal with / care for", "example": "Boys and girls must be treated fairly at school and at home.", "wordFamily": [{"word": "treat", "pos": "(v)"}, {"word": "treatment", "pos": "(n)"}]}], "grammarNotes": [{"id": "g_u6_1", "title": "Câu Bị Động Với Động Từ Khuyết Thiếu (Passive Voice with Modals)", "usage": "Dùng để nhấn mạnh hành động cần được thực hiện đối với chủ thể.", "formula": "S + can / could / may / might / must / should / will + be + V3/ed (+ by O)", "signals": "must be, should be, can be, will be"}], "grammarQuestions": [{"id": "gq_u6_1", "question": "Girls and boys should ______ equally in every classroom.", "options": ["treat", "be treated", "treating", "treated"], "answer": "be treated", "explanation": "Câu bị động với động từ khuyết thiếu 'should + be + V3/ed'."}]}, "Unit 7: Viet Nam and International Organisations": {"vocab": [{"id": "u7_1", "part": "Từ vựng Unit 7", "word": "peacekeeping", "pos": "(n / adj)", "ipa": "/ˈpiːskiːpɪŋ/", "meaning": "gìn giữ hòa bình", "synonym": "peace enforcement / truce maintenance", "example": "Viet Nam has sent officers to join UN peacekeeping missions.", "wordFamily": []}, {"id": "u7_2", "part": "Từ vựng Unit 7", "word": "economic", "pos": "(adj)", "ipa": "/ˌiːkəˈnɒmɪk/", "meaning": "thuộc về kinh tế", "synonym": "financial / commercial", "example": "Joining WTO has boosted Viet Nam's economic growth.", "wordFamily": [{"word": "economy", "pos": "(n)"}, {"word": "economic", "pos": "(adj)"}, {"word": "economical", "pos": "(adj)"}]}, {"id": "u7_3", "part": "Từ vựng Unit 7", "word": "invest", "pos": "(v)", "ipa": "/ɪnˈvest/", "meaning": "đầu tư", "synonym": "fund / put money into", "example": "Many foreign companies invest in technology in Viet Nam.", "wordFamily": [{"word": "invest", "pos": "(v)"}, {"word": "investment", "pos": "(n)"}, {"word": "investor", "pos": "(n)"}]}, {"id": "u7_4", "part": "Từ vựng Unit 7", "word": "competitive", "pos": "(adj)", "ipa": "/kəmˈpetətɪv/", "meaning": "có tính cạnh tranh", "synonym": "ambitious / rivalrous", "example": "Vietnamese products have become more competitive globally.", "wordFamily": [{"word": "compete", "pos": "(v)"}, {"word": "competition", "pos": "(n)"}, {"word": "competitive", "pos": "(adj)"}]}], "grammarNotes": [{"id": "g_u7_1", "title": "So Sánh Hơn & So Sánh Nhất (Comparative & Superlative Adjectives)", "usage": "• Tính từ ngắn: adj-er + than / the + adj-est.\n• Tính từ dài: more + adj + than / the most + adj.", "formula": "Comparative: adj-er / more adj + than\nSuperlative: the adj-est / the most adj", "signals": "than, in the world, of all, one of the..."}], "grammarQuestions": [{"id": "gq_u7_1", "question": "Today, Viet Nam is ______ to foreign investors than ever before.", "options": ["attractive", "more attractive", "most attractive", "the most attractive"], "answer": "more attractive", "explanation": "So sánh hơn với tính từ dài 'attractive' có 'than'."}]}, "Unit 8: New Ways to Learn": {"vocab": [{"id": "u8_1", "part": "Từ vựng Unit 8", "word": "blended learning", "pos": "(n.phr)", "ipa": "/ˌblendɪd ˈlɜːnɪŋ/", "meaning": "học tập kết hợp (trực tuyến & trực tiếp)", "synonym": "hybrid learning", "example": "Blended learning combines online videos with classroom discussions.", "wordFamily": []}, {"id": "u8_2", "part": "Từ vựng Unit 8", "word": "face-to-face", "pos": "(adj / adv)", "ipa": "/ˌfeɪs tə ˈfeɪs/", "meaning": "trực tiếp, mặt đối mặt", "synonym": "in-person / direct", "example": "Face-to-face classes allow instant interaction with teachers.", "wordFamily": []}, {"id": "u8_3", "part": "Từ vựng Unit 8", "word": "strategy", "pos": "(n)", "ipa": "/ˈstrætədʒi/", "meaning": "chiến lược, phương pháp", "synonym": "approach / plan / method", "example": "Using flashcards is a great strategy for memorizing vocabulary.", "wordFamily": [{"word": "strategy", "pos": "(n)"}, {"word": "strategic", "pos": "(adj)"}]}, {"id": "u8_4", "part": "Từ vựng Unit 8", "word": "distraction", "pos": "(n)", "ipa": "/dɪˈstrækʃn/", "meaning": "sự xao nhãng", "synonym": "interruption / disturbance", "example": "Social media notifications can be a huge distraction while studying.", "wordFamily": [{"word": "distract", "pos": "(v)"}, {"word": "distraction", "pos": "(n)"}]}], "grammarNotes": [{"id": "g_u8_1", "title": "Mệnh Đề Quan Hệ Xác Định & Không Xác Định (Relative Clauses)", "usage": "• who (người - S/O), whom (người - O), which (vật), that (người/vật - không dùng sau dấu phẩy), whose (sở hữu).", "formula": "N(người) + who/that + V | N(vật) + which/that + V | N + whose + N", "signals": "who, whom, which, that, whose"}], "grammarQuestions": [{"id": "gq_u8_1", "question": "Blended learning, ______ combines online and offline study, is very popular now.", "options": ["which", "that", "who", "where"], "answer": "which", "explanation": "Mệnh đề quan hệ không xác định có dấu phẩy dùng 'which', không dùng 'that'."}]}, "Unit 9: Protecting the Environment": {"vocab": [{"id": "u9_1", "part": "Từ vựng Unit 9", "word": "biodiversity", "pos": "(n)", "ipa": "/ˌbaɪəʊdaɪˈvɜːsəti/", "meaning": "đa dạng sinh học", "synonym": "biological variety", "example": "National parks play a crucial role in protecting biodiversity.", "wordFamily": []}, {"id": "u9_2", "part": "Từ vựng Unit 9", "word": "deforestation", "pos": "(n)", "ipa": "/ˌdiːˌfɒrɪˈsteɪʃn/", "meaning": "nạn phá rừng", "synonym": "forest clearance / logging", "example": "Deforestation destroys the natural habitats of wild animals.", "wordFamily": []}, {"id": "u9_3", "part": "Từ vựng Unit 9", "word": "endangered", "pos": "(adj)", "ipa": "/ɪnˈdeɪndʒəd/", "meaning": "bị đe dọa, có nguy cơ tuyệt chủng", "synonym": "threatened / at risk", "example": "The giant panda and sea turtle are endangered species.", "wordFamily": [{"word": "danger", "pos": "(n)"}, {"word": "endanger", "pos": "(v)"}, {"word": "endangered", "pos": "(adj)"}]}, {"id": "u9_4", "part": "Từ vựng Unit 9", "word": "habitat", "pos": "(n)", "ipa": "/ˈhæbɪtæt/", "meaning": "môi trường sống tự nhiên", "synonym": "natural environment / home", "example": "Pollution is threatening the marine habitat of coral reefs.", "wordFamily": []}], "grammarNotes": [{"id": "g_u9_1", "title": "Câu Tường Thuật (Reported Speech)", "usage": "Lùi thì động từ (Hiện tại đơn -> Quá khứ đơn; will -> would; can -> could), đổi đại từ nhân xưng và trạng từ thời gian/nơi chốn.", "formula": "S + said (that) / told + O + (that) + S + V(lùi thì)", "signals": "said, told, asked, the next day, the previous day"}], "grammarQuestions": [{"id": "gq_u9_1", "question": "Nam said that he ______ a presentation on global warming the next day.", "options": ["will give", "would give", "gives", "gave"], "answer": "would give", "explanation": "Câu tường thuật lùi 'will' thành 'would'."}]}, "Unit 10: Ecotourism": {"vocab": [{"id": "u10_1", "part": "Từ vựng Unit 10", "word": "ecotourism", "pos": "(n)", "ipa": "/ˈiːkəʊtʊərɪzəm/", "meaning": "du lịch sinh thái", "synonym": "green tourism / sustainable travel", "example": "Ecotourism helps protect nature while supporting local communities.", "wordFamily": []}, {"id": "u10_2", "part": "Từ vựng Unit 10", "word": "craft", "pos": "(n)", "ipa": "/krɑːft/", "meaning": "đồ thủ công mỹ nghệ", "synonym": "handicraft / handiwork", "example": "Visitors love buying handmade crafts from local artisans.", "wordFamily": []}, {"id": "u10_3", "part": "Từ vựng Unit 10", "word": "responsible", "pos": "(adj)", "ipa": "/rɪˈspɒnsəbl/", "meaning": "có trách nhiệm", "synonym": "accountable / conscientious", "example": "Responsible tourists never leave litter on hiking trails.", "wordFamily": [{"word": "responsible", "pos": "(adj)"}, {"word": "responsibility", "pos": "(n)"}]}, {"id": "u10_4", "part": "Từ vựng Unit 10", "word": "mass tourism", "pos": "(n.phr)", "ipa": "/ˌmæs ˈtʊərɪzəm/", "meaning": "du lịch đại trà", "synonym": "large-scale commercial tourism", "example": "Mass tourism can overcrowd beaches and damage local ecosystems.", "wordFamily": []}], "grammarNotes": [{"id": "g_u10_1", "title": "Câu Điều Kiện Loại 1 & Loại 2 (Conditional Sentences Type 1 & Type 2)", "usage": "• Loại 1 (Có thật ở hiện tại/tương lai): If + S + V(s/es), S + will/can + V_bare.\n• Loại 2 (Không có thật ở hiện tại): If + S + V2/ed (were), S + would/could + V_bare.", "formula": "Type 1: If + Present Simple, will + V_bare\nType 2: If + Past Simple, would + V_bare", "signals": "If, Unless"}], "grammarQuestions": [{"id": "gq_u10_1", "question": "If I ______ you, I would book an eco-tour to Cuc Phuong National Park.", "options": ["am", "were", "will be", "have been"], "answer": "were", "explanation": "Câu điều kiện loại 2 giả định trái với hiện tại dùng 'were' cho mọi ngôi."}]}};
+
+    let unitsDB = JSON.parse(localStorage.getItem("gs10_khanhlinh_db_v1")) || defaultUnitsDB;
+    let userSession = JSON.parse(localStorage.getItem("gs10_khanhlinh_user_v1")) || null;
+    let scoreRecords = JSON.parse(localStorage.getItem("gs10_khanhlinh_logs_v1")) || [];
+    let sheetWebhookUrl = localStorage.getItem("gs10_khanhlinh_sheet_v1") || "";
+
+    // Exam & Anti-Cheat State
+    let currentExamList = [];
+    let examAnswersMap = {};
+    let currentExamCode = "GS10-101";
+    let isTestingNow = false;
+    let isExamSubmitted = false;
+    let tabViolationCount = 0;
+    let lookupViolationCount = 0;
+    let grammarPracticeAnswers = {};
+
+    // Voice Synthesis
+    let usFemaleVoice = null;
+
+    // ================= 2. PRONUNCIATION (US FEMALE CLEAR VOICE) =================
+    function selectBestUSFemaleVoice(voices) {
+      if (!voices || !voices.length) return null;
+      const us = voices.filter(v => v.lang.includes("en-US") || v.lang.includes("en_US"));
+      const pool = us.length ? us : voices.filter(v => v.lang.startsWith("en"));
+      const prefs = ["google us english", "samantha", "ava", "aria", "jenny", "zira", "michelle", "female"];
+      for (const p of prefs) {
+        const match = pool.find(v => v.name.toLowerCase().includes(p));
+        if (match) return match;
+      }
+      return pool[0] || voices[0];
+    }
+
+    function populateVoices() {
+      const voices = window.speechSynthesis.getVoices();
+      const sel = document.getElementById("voiceSelector");
+      if (!voices.length) return;
+      const us = voices.filter(v => v.lang.includes("en-US") || v.lang.includes("en_US"));
+      const list = us.length ? us : voices.filter(v => v.lang.startsWith("en"));
+      const best = selectBestUSFemaleVoice(voices);
+      sel.innerHTML = "";
+      list.forEach(v => {
+        const opt = document.createElement("option");
+        opt.value = v.name;
+        opt.textContent = `${v.name} (${v.lang})`;
+        if (best && v.name === best.name) opt.selected = true;
+        sel.appendChild(opt);
+      });
+      usFemaleVoice = best;
+      sel.onchange = () => {
+        usFemaleVoice = voices.find(v => v.name === sel.value) || best;
+      };
+    }
+    window.speechSynthesis.onvoiceschanged = populateVoices;
+
+    function speakWord(text, rate = 1.0) {
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = "en-US";
+      utter.rate = rate;
+      utter.pitch = 1.08;
+      utter.volume = 1.0;
+      const v = usFemaleVoice || selectBestUSFemaleVoice(window.speechSynthesis.getVoices());
+      if (v) utter.voice = v;
+      window.speechSynthesis.speak(utter);
+    }
+
+    function playFeedbackSound(kind = "ok") {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        if (kind === "ok") {
+          osc.frequency.setValueAtTime(523.25, ctx.currentTime);
+          osc.frequency.setValueAtTime(659.25, ctx.currentTime + 0.09);
+          osc.frequency.setValueAtTime(783.99, ctx.currentTime + 0.18);
+        } else {
+          osc.frequency.setValueAtTime(270, ctx.currentTime);
+          osc.frequency.setValueAtTime(195, ctx.currentTime + 0.16);
+        }
+        gain.gain.setValueAtTime(0.13, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.4);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.4);
+      } catch (e) {}
+    }
+
+    // ================= 3. AUTHENTICATION (STUDENT & TEACHER) =================
+    function switchAuthRole(role) {
+      const sTab = document.getElementById("tabStuLogin");
+      const tTab = document.getElementById("tabTeaLogin");
+      const sBox = document.getElementById("stuAuthBox");
+      const tBox = document.getElementById("teaAuthBox");
+      if (role === "teacher") {
+        tTab.classList.add("active"); sTab.classList.remove("active");
+        tBox.classList.remove("hidden"); sBox.classList.add("hidden");
+      } else {
+        sTab.classList.add("active"); tTab.classList.remove("active");
+        sBox.classList.remove("hidden"); tBox.classList.add("hidden");
+      }
+    }
+
+    function openLoginModal() {
+      document.getElementById("teaEmailField").value = "";
+      document.getElementById("teaPassField").value = "";
+      document.getElementById("loginModal").classList.remove("hidden");
+    }
+
+    function submitStudentLogin() {
+      const name = document.getElementById("stuNameField").value.trim();
+      const email = document.getElementById("stuEmailField").value.trim().toLowerCase();
+      const stuClass = document.getElementById("stuClassField").value.trim() || "10A1";
+
+      if (email === _T_MAIL) {
+        switchAuthRole("teacher");
+        alert("Vui lòng nhập mật khẩu giáo viên tại mục Giáo Viên Đăng Nhập.");
+        return;
+      }
+      if (!name || name.length < 2) {
+        alert("Vui lòng nhập đầy đủ Họ và Tên học sinh.");
+        return;
+      }
+      if (!email || !email.includes("@")) {
+        alert("Vui lòng nhập đúng địa chỉ Gmail của học sinh.");
+        return;
+      }
+
+      const prevXP = (userSession && userSession.email === email && !userSession.isTeacher) ? (userSession.xp || 0) : 0;
+      userSession = { name, email, stuClass, xp: prevXP, isTeacher: false };
+      localStorage.setItem("gs10_khanhlinh_user_v1", JSON.stringify(userSession));
+
+      document.getElementById("loginModal").classList.add("hidden");
+      lockTeacherGate();
+      refreshHeaderUI();
+      renderCurrentUnitAll();
+      playFeedbackSound("ok");
+    }
+
+    function submitTeacherLogin() {
+      const email = document.getElementById("teaEmailField").value.trim().toLowerCase();
+      const pass = document.getElementById("teaPassField").value.trim();
+
+      if (email !== _T_MAIL || pass !== _T_KEY) {
+        alert("Thông tin đăng nhập giáo viên không chính xác.");
+        return;
+      }
+
+      userSession = {
+        name: "Cô Nguyễn Thị Khánh Linh",
+        email: _T_MAIL,
+        stuClass: "Giáo Viên",
+        xp: 0,
+        isTeacher: true
+      };
+      localStorage.setItem("gs10_khanhlinh_user_v1", JSON.stringify(userSession));
+
+      document.getElementById("loginModal").classList.add("hidden");
+      refreshHeaderUI();
+      openTeacherWorkspaceUI();
+      renderCurrentUnitAll();
+      playFeedbackSound("ok");
+    }
+
+    function refreshHeaderUI() {
+      if (!userSession) return;
+      if (userSession.isTeacher) {
+        document.getElementById("hdrUserName").textContent = userSession.name;
+        document.getElementById("hdrUserSub").textContent = "Tài khoản Quản trị Giáo viên";
+        document.getElementById("hdrXpTag").textContent = "Chế độ Giáo viên";
+        document.getElementById("teacherGrammarQuickBtn").classList.remove("hidden");
+      } else {
+        document.getElementById("hdrUserName").textContent = `${userSession.name} (${userSession.stuClass})`;
+        document.getElementById("hdrUserSub").textContent = userSession.email;
+        document.getElementById("hdrXpTag").textContent = `${userSession.xp || 0} XP`;
+        document.getElementById("teacherGrammarQuickBtn").classList.add("hidden");
+      }
+    }
+
+    // ================= 4. LIVE ANTI-CHEAT & LOOKUP DETECTION =================
+    function recordExamViolation(type, message) {
+      if (userSession && userSession.isTeacher) return;
+
+      if (type === "tab") tabViolationCount++;
+      if (type === "lookup") lookupViolationCount++;
+
+      const bar = document.getElementById("mainMonitorBar");
+      bar.classList.add("alert-active");
+      document.getElementById("monitorMsgText").textContent =
+        `CẢNH BÁO PHẠM LỖI: ${message} (Hệ thống đã ghi nhận báo cáo về giáo viên)`;
+
+      const cTab = document.getElementById("chipTabCount");
+      cTab.textContent = `Chuyển tab: ${tabViolationCount}`;
+      if (tabViolationCount > 0) cTab.classList.add("danger");
+
+      const cLook = document.getElementById("chipLookupCount");
+      cLook.textContent = `Tra nghĩa khi thi: ${lookupViolationCount}`;
+      if (lookupViolationCount > 0) cLook.classList.add("danger");
+
+      document.getElementById("vioModalHeading").textContent =
+        type === "tab" ? "Cảnh Báo Chuyển Tab / Rời Màn Hình" : "Cảnh Báo Tra Nghĩa Khi Đang Làm Đề";
+      document.getElementById("vioModalText").textContent = message;
+      document.getElementById("vioTabNum").textContent = tabViolationCount;
+      document.getElementById("vioLookupNum").textContent = lookupViolationCount;
+      document.getElementById("violationModal").classList.remove("hidden");
+      playFeedbackSound("warn");
+    }
+
+    function closeViolationModal() {
+      document.getElementById("violationModal").classList.add("hidden");
+    }
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden && isTestingNow && !isExamSubmitted) {
+        recordExamViolation("tab", "Học sinh vừa rời khỏi màn hình làm bài kiểm tra!");
+      }
+    });
+
+    function handleVocabSearchInput() {
+      if (isTestingNow && !isExamSubmitted && (!userSession || !userSession.isTeacher)) {
+        const val = document.getElementById("vocabLookupBox").value.trim();
+        if (val.length === 1) {
+          recordExamViolation("lookup", "Học sinh sử dụng thanh tra nghĩa từ vựng trong lúc chưa nộp bài kiểm tra!");
+        }
+      }
+      renderVocabularyCards();
+    }
+
+    // ================= 5. UNIT SELECTION & NAVIGATION =================
+    function populateUnitSelector() {
+      const sel = document.getElementById("unitSelector");
+      const keys = Object.keys(unitsDB);
+      sel.innerHTML = "";
+      keys.forEach(u => {
+        const opt = document.createElement("option");
+        opt.value = u;
+        opt.textContent = u;
+        sel.appendChild(opt);
+      });
+      // Default to Unit 4 which holds the complete 150-word uploaded set
+      if (unitsDB["Unit 4: For a Better Community"]) {
+        sel.value = "Unit 4: For a Better Community";
+      }
+      onUnitSelected();
+    }
+
+    function getActiveUnitKey() {
+      return document.getElementById("unitSelector").value;
+    }
+
+    function getActiveUnitObj() {
+      return unitsDB[getActiveUnitKey()] || { vocab: [], grammarNotes: [], grammarQuestions: [] };
+    }
+
+    function onUnitSelected() {
+      const uObj = getActiveUnitObj();
+      const parts = [...new Set((uObj.vocab || []).map(v => v.part))];
+      const subSel = document.getElementById("subPartSelector");
+      subSel.innerHTML = `<option value="ALL">Tất cả phân mục (${(uObj.vocab || []).length} từ)</option>`;
+      parts.forEach(p => {
+        const cnt = uObj.vocab.filter(v => v.part === p).length;
+        const opt = document.createElement("option");
+        opt.value = p;
+        opt.textContent = `${p} (${cnt} từ)`;
+        subSel.appendChild(opt);
+      });
+
+      const dl = document.getElementById("unitPartsList");
+      dl.innerHTML = parts.map(p => `<option value="${p}">`).join("");
+      document.getElementById("unitWordTotal").textContent = (uObj.vocab || []).length;
+
+      renderCurrentUnitAll();
+    }
+
+    function onSubPartSelected() {
+      renderVocabularyCards();
+      if (currentExamList.length > 0) buildExamPaper(true);
+    }
+
+    function renderCurrentUnitAll() {
+      renderVocabularyCards();
+      renderGrammarSection();
+      if (currentExamList.length > 0) buildExamPaper(true);
+    }
+
+    function switchWorkspaceTab(viewName, pillEl) {
+      if ((viewName === "vocab" || viewName === "grammar") && isTestingNow && !isExamSubmitted && (!userSession || !userSession.isTeacher)) {
+        recordExamViolation("lookup", "Học sinh chuyển sang tab Học từ / Ngữ pháp để tra cứu trong lúc đang làm đề kiểm tra!");
+      }
+
+      document.querySelectorAll(".nav-pill").forEach(p => p.classList.remove("active"));
+      if (pillEl) pillEl.classList.add("active");
+
+      ["vocab", "grammar", "exam", "teacher"].forEach(v => {
+        document.getElementById("view-" + v).classList.add("hidden");
+      });
+      document.getElementById("view-" + viewName).classList.remove("hidden");
+
+      if (viewName === "exam" && currentExamList.length === 0) {
+        buildExamPaper(true);
+      }
+      if (viewName === "teacher") {
+        if (userSession && userSession.isTeacher) openTeacherWorkspaceUI();
+        renderAdminLogsTable();
+      }
+    }
+
+    // ================= 6. VOCABULARY LEARNING VIEW =================
+    function getScopedVocabList() {
+      const uObj = getActiveUnitObj();
+      const subPart = document.getElementById("subPartSelector").value;
+      if (subPart === "ALL") return uObj.vocab || [];
+      return (uObj.vocab || []).filter(v => v.part === subPart);
+    }
+
+    function renderVocabularyCards() {
+      const list = getScopedVocabList();
+      const kw = document.getElementById("vocabLookupBox").value.trim().toLowerCase();
+      const filtered = list.filter(v =>
+        v.word.toLowerCase().includes(kw) ||
+        v.meaning.toLowerCase().includes(kw) ||
+        (v.synonym && v.synonym.toLowerCase().includes(kw))
+      );
+
+      document.getElementById("vocabSummaryLine").textContent =
+        `Đang hiển thị ${filtered.length} / ${list.length} từ vựng thuộc ${getActiveUnitKey()}`;
+
+      const container = document.getElementById("vocabCardsContainer");
+      const isTea = userSession && userSession.isTeacher;
+
+      container.innerHTML = filtered.map(v => {
+        const wfBlock = (v.wordFamily && v.wordFamily.length > 1)
+          ? `<div class="wf-strip"><strong>Gia đình từ:</strong> ${v.wordFamily.map(w => `${w.word} <em>${w.pos}</em>`).join(" | ")}</div>`
+          : "";
+
+        const teaControls = isTea
+          ? `<div style="margin-top:10px; padding-top:10px; border-top:1.5px dashed #FBCFE8; display:flex; gap:8px;">
+               <button class="btn-3d btn-amber btn-sm" onclick="openWordEditor('${v.id}')">Chỉnh Sửa</button>
+               <button class="btn-3d btn-red btn-sm" onclick="removeVocabItem('${v.id}')">Xóa Từ</button>
+             </div>`
+          : "";
+
+        return `
+          <div class="vocab-item-3d">
+            <div>
+              <div>
+                <span class="word-title">${v.word}</span>
+                <span class="pos-pill">${v.pos}</span>
+              </div>
+              <div class="ipa-line">${v.ipa || ""}</div>
+              <div class="meaning-pill">${v.meaning}</div>
+              ${v.synonym ? `<div class="syn-line">Đồng nghĩa: ${v.synonym}</div>` : ""}
+              <div class="example-line">"${v.example}"</div>
+              ${wfBlock}
+            </div>
+            <div>
+              <div class="audio-row">
+                <button class="btn-3d btn-pink btn-sm" onclick="speakWord('${v.word.replace(/'/g, "\\'")}', 1.0)">Đọc Chuẩn</button>
+                <button class="btn-3d btn-blue btn-sm" onclick="speakWord('${v.word.replace(/'/g, "\\'")}', 0.65)">Đọc Chậm</button>
+                <button class="btn-3d btn-soft btn-sm" onclick="speakWord('${v.example.replace(/'/g, "\\'")}', 0.95)">Đọc Ví Dụ</button>
+              </div>
+              ${teaControls}
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    // ================= 7. SEPARATE GRAMMAR & PRACTICE VIEW =================
+    function renderGrammarSection() {
+      const uObj = getActiveUnitObj();
+      const notesBox = document.getElementById("grammarNotesContainer");
+      const isTea = userSession && userSession.isTeacher;
+
+      if (!uObj.grammarNotes || !uObj.grammarNotes.length) {
+        notesBox.innerHTML = `<p style="color:var(--text-secondary); font-weight:600;">Chưa có ghi chú ngữ pháp cho Unit này.</p>`;
+      } else {
+        notesBox.innerHTML = uObj.grammarNotes.map(g => `
+          <div class="grammar-box-3d">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+              <h3>${g.title}</h3>
+              ${isTea ? `<button class="btn-3d btn-amber btn-sm" onclick="openGrammarEditor('${g.id}')">Sửa Ngữ Pháp</button>` : ""}
+            </div>
+            <p style="white-space:pre-line; font-weight:600; color:var(--text-primary);">${g.usage}</p>
+            <div class="formula-block">${g.formula}</div>
+            <div class="signal-strip">Dấu hiệu nhận biết: ${g.signals}</div>
+          </div>
+        `).join("");
+      }
+
+      const pracBox = document.getElementById("grammarPracticeContainer");
+      grammarPracticeAnswers = {};
+      document.getElementById("grammarPracticeFeedback").classList.add("hidden");
+
+      if (!uObj.grammarQuestions || !uObj.grammarQuestions.length) {
+        pracBox.innerHTML = `<p style="color:var(--text-secondary); font-weight:600;">Chưa có bài tập ngữ pháp riêng cho Unit này.</p>`;
+        return;
+      }
+
+      const letters = ["A", "B", "C", "D"];
+      pracBox.innerHTML = uObj.grammarQuestions.map((gq, idx) => `
+        <div class="q-card-3d" id="gp-card-${idx}">
+          <span class="q-type-tag">Bài tập ngữ pháp • Câu ${idx + 1}</span>
+          <p style="font-weight:700; font-size:1.02rem;">${gq.question}</p>
+          <div class="opt-grid">
+            ${gq.options.map((opt, oIdx) => `
+              <button class="opt-btn-3d" onclick="selectGrammarPractice(${idx}, this, '${opt.replace(/'/g, "\\'")}')">
+                <strong>${letters[oIdx]}.</strong> ${opt}
+              </button>
+            `).join("")}
+          </div>
+          <div id="gp-exp-${idx}" class="hidden" style="margin-top:10px; font-size:0.9rem; font-weight:700;"></div>
+        </div>
+      `).join("");
+    }
+
+    function selectGrammarPractice(idx, btnEl, val) {
+      grammarPracticeAnswers[idx] = val;
+      const card = document.getElementById(`gp-card-${idx}`);
+      card.querySelectorAll(".opt-btn-3d").forEach(b => b.classList.remove("selected"));
+      btnEl.classList.add("selected");
+    }
+
+    function checkGrammarPractice() {
+      const uObj = getActiveUnitObj();
+      const qs = uObj.grammarQuestions || [];
+      if (!qs.length) return;
+      let right = 0;
+      qs.forEach((gq, idx) => {
+        const chosen = (grammarPracticeAnswers[idx] || "").trim();
+        const expEl = document.getElementById(`gp-exp-${idx}`);
+        expEl.classList.remove("hidden");
+        if (chosen === gq.answer) {
+          right++;
+          expEl.style.color = "#15803D";
+          expEl.textContent = `Chính xác! ${gq.explanation || ""}`;
+        } else {
+          expEl.style.color = "#DC2626";
+          expEl.textContent = `Đáp án đúng: ${gq.answer}. ${gq.explanation || ""}`;
+        }
+      });
+      const fb = document.getElementById("grammarPracticeFeedback");
+      fb.classList.remove("hidden");
+      fb.textContent = `Kết quả luyện ngữ pháp: Đúng ${right} / ${qs.length} câu.`;
+      playFeedbackSound("ok");
+    }
+
+    // ================= 8. PURE EXAM ENGINE (30-80 QUESTIONS, AUDIO ONLY ON LISTEN & WRITE) =================
+    function seededRand(seed) {
+      let x = Math.sin(seed++) * 10000;
+      return x - Math.floor(x);
+    }
+
+    function seededShuffleList(arr, seed) {
+      const copy = [...arr];
+      let s = seed;
+      for (let i = copy.length - 1; i > 0; i--) {
+        s++;
+        const j = Math.floor(seededRand(s) * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function applyExamSeed() {
+      const raw = document.getElementById("examSeedBox").value.trim();
+      const num = parseInt(raw.replace(/\D/g, ""), 10);
+      if (!num || isNaN(num)) {
+        alert("Vui lòng nhập số mã đề hợp lệ (ví dụ: 101, 205).");
+        return;
+      }
+      buildExamPaper(false, num);
+    }
+
+    function buildExamPaper(newSeed = true, explicitSeed = null) {
+      let seed;
+      if (explicitSeed !== null) {
+        seed = explicitSeed;
+      } else if (newSeed) {
+        seed = Math.floor(101 + Math.random() * 898);
+      } else {
+        seed = parseInt(currentExamCode.replace(/\D/g, ""), 10) || 101;
+      }
+
+      const unitNumMatch = getActiveUnitKey().match(/Unit\s+(\d+)/i);
+      const uTag = unitNumMatch ? `U${unitNumMatch[1]}` : "GS10";
+      currentExamCode = `${uTag}-${seed}`;
+      document.getElementById("activeExamCode").textContent = currentExamCode;
+
+      const targetCount = Math.max(30, Math.min(80, parseInt(document.getElementById("examLengthSelect").value, 10) || 40));
+      const formatFilter = document.getElementById("examFormatSelect").value;
+      const uObj = getActiveUnitObj();
+      const scopedVocab = getScopedVocabList();
+      const fullUnitVocab = uObj.vocab || [];
+
+      let bank = [];
+      let s = seed * 19;
+
+      // 1. Vocabulary-based question types
+      scopedVocab.forEach((v, idx) => {
+        s += (idx + 5);
+        const escapedWord = v.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const blankedEx = v.example.replace(new RegExp(escapedWord, "i"), "____________");
+
+        // Format A: Trắc nghiệm từ vựng ngữ cảnh
+        if (blankedEx !== v.example && fullUnitVocab.length >= 4) {
+          const samePos = seededShuffleList(
+            fullUnitVocab.filter(x => x.word !== v.word && x.pos === v.pos).map(x => x.word),
+            s + 1
+          ).slice(0, 3);
+          const anyWord = seededShuffleList(
+            fullUnitVocab.filter(x => x.word !== v.word).map(x => x.word),
+            s + 2
+          ).slice(0, 3);
+          const dist = samePos.length >= 3 ? samePos : anyWord;
+          bank.push({
+            format: "mcq_context",
+            label: "Trắc nghiệm từ vựng ngữ cảnh",
+            prompt: `Chọn từ hoặc cụm từ thích hợp nhất điền vào chỗ trống: "${blankedEx}"`,
+            options: seededShuffleList([v.word, ...dist], s + 3),
+            answer: v.word
+          });
+        }
+
+        // Format B: Nghe phát âm từ rồi viết từ (ONLY format with audio button in exam!)
+        bank.push({
+          format: "listen_spell",
+          label: "Nghe phát âm từ rồi viết từ",
+          prompt: `Bấm nút nghe phát âm và viết chính xác từ tiếng Anh ${v.pos} (Nghĩa: ${v.meaning}):`,
+          audioWord: v.word,
+          answer: v.word
+        });
+
+        // Format C: Chọn từ đồng nghĩa
+        if (v.synonym && fullUnitVocab.length >= 4) {
+          const primarySyn = v.synonym.split("/")[0].trim();
+          const synDist = seededShuffleList(
+            fullUnitVocab.filter(x => x.word !== v.word && x.synonym).map(x => x.synonym.split("/")[0].trim()),
+            s + 4
+          ).slice(0, 3);
+          if (synDist.length >= 3) {
+            bank.push({
+              format: "synonym",
+              label: "Chọn từ đồng nghĩa",
+              prompt: `Chọn từ hoặc cụm từ đồng nghĩa với "${v.word}" ${v.pos}:`,
+              options: seededShuffleList([primarySyn, ...synDist], s + 5),
+              answer: primarySyn
+            });
+          }
+        }
+
+        // Format D: Chọn từ loại đúng
+        if (v.wordFamily && v.wordFamily.length >= 2) {
+          const wfPool = v.wordFamily.map(w => w.word);
+          const filler = seededShuffleList(
+            fullUnitVocab.filter(x => !wfPool.includes(x.word)).map(x => x.word),
+            s + 6
+          ).slice(0, Math.max(0, 4 - wfPool.length));
+          const wfOpts = seededShuffleList([...new Set([...wfPool, ...filler])].slice(0, 4), s + 7);
+          if (wfOpts.length >= 3 && wfOpts.includes(v.word)) {
+            bank.push({
+              format: "word_form",
+              label: "Chọn từ loại đúng",
+              prompt: `Chọn dạng từ loại đúng (${v.pos}) hoàn thành câu: "${blankedEx !== v.example ? blankedEx : v.example.replace(v.word, "____________")}"`,
+              options: wfOpts,
+              answer: v.word
+            });
+          }
+        }
+
+        // Format E: Kiểm tra nghĩa
+        if (fullUnitVocab.length >= 4) {
+          const meanDist = seededShuffleList(
+            fullUnitVocab.filter(x => x.word !== v.word).map(x => x.meaning),
+            s + 8
+          ).slice(0, 3);
+          bank.push({
+            format: "meaning_check",
+            label: "Kiểm tra nghĩa từ vựng",
+            prompt: `Nghĩa tiếng Việt đúng của "${v.word}" ${v.pos} là gì?`,
+            options: seededShuffleList([v.meaning, ...meanDist], s + 9),
+            answer: v.meaning
+          });
+        }
+      });
+
+      // 2. Grammar MCQ items from the Unit
+      (uObj.grammarQuestions || []).forEach((gq, gIdx) => {
+        bank.push({
+          format: "grammar_mcq",
+          label: "Trắc nghiệm ngữ pháp Unit",
+          prompt: gq.question,
+          options: seededShuffleList(gq.options, seed + gIdx * 11),
+          answer: gq.answer
+        });
+      });
+
+      if (formatFilter !== "mixed_all") {
+        bank = bank.filter(item => item.format === formatFilter);
+      }
+
+      let finalPool = seededShuffleList(bank, seed * 29);
+      while (finalPool.length < targetCount && bank.length > 0) {
+        finalPool = finalPool.concat(seededShuffleList(bank, seed * (finalPool.length + 13)));
+      }
+
+      currentExamList = finalPool.slice(0, targetCount);
+      examAnswersMap = {};
+      isTestingNow = true;
+      isExamSubmitted = false;
+      tabViolationCount = 0;
+      lookupViolationCount = 0;
+
+      // Reset live monitor bar
+      const bar = document.getElementById("mainMonitorBar");
+      bar.classList.remove("alert-active");
+      document.getElementById("monitorMsgText").textContent =
+        `Đang làm Bộ đề ${currentExamCode} (${targetCount} câu): Hệ thống giám sát chuyển tab và tra nghĩa đang bật.`;
+      document.getElementById("chipTabCount").textContent = "Chuyển tab: 0";
+      document.getElementById("chipTabCount").classList.remove("danger");
+      document.getElementById("chipLookupCount").textContent = "Tra nghĩa khi thi: 0";
+      document.getElementById("chipLookupCount").classList.remove("danger");
+      document.getElementById("examScoreSummary").classList.add("hidden");
+
+      renderExamPaper();
+    }
+
+    function renderExamPaper() {
+      const box = document.getElementById("examPaperList");
+      if (!currentExamList.length) {
+        box.innerHTML = `<p style="font-weight:700; color:var(--text-secondary);">Chưa có câu hỏi cho dạng bài này trong Unit hiện tại.</p>`;
+        return;
+      }
+
+      const letters = ["A", "B", "C", "D"];
+      box.innerHTML = currentExamList.map((item, idx) => {
+        // Strictly: NO extra features in test items EXCEPT audio button for listen_spell!
+        if (item.format === "listen_spell") {
+          return `
+            <div class="q-card-3d" id="test-q-${idx}">
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+                <span class="q-type-tag" style="margin-bottom:0;">Câu ${idx + 1} / ${currentExamList.length} • ${item.label}</span>
+                <div style="display:flex; gap:6px;">
+                  <button type="button" class="btn-3d btn-pink btn-sm" onclick="speakWord('${item.audioWord.replace(/'/g, "\\'")}', 1.0)">Nghe Phát Âm</button>
+                  <button type="button" class="btn-3d btn-blue btn-sm" onclick="speakWord('${item.audioWord.replace(/'/g, "\\'")}', 0.65)">Nghe Chậm</button>
+                </div>
+              </div>
+              <p style="font-weight:700; font-size:1.02rem; margin-bottom:10px;">${item.prompt}</p>
+              <input type="text" placeholder="Viết từ tiếng Anh nghe được..." oninput="examAnswersMap[${idx}] = this.value" />
+            </div>
+          `;
+        } else {
+          return `
+            <div class="q-card-3d" id="test-q-${idx}">
+              <span class="q-type-tag">Câu ${idx + 1} / ${currentExamList.length} • ${item.label}</span>
+              <p style="font-weight:700; font-size:1.02rem;">${item.prompt}</p>
+              <div class="opt-grid">
+                ${item.options.map((opt, oIdx) => `
+                  <button type="button" class="opt-btn-3d" onclick="chooseExamOption(${idx}, this, '${opt.replace(/'/g, "\\'")}')">
+                    <strong>${letters[oIdx] || "*"}.</strong> ${opt}
+                  </button>
+                `).join("")}
+              </div>
+            </div>
+          `;
+        }
+      }).join("");
+    }
+
+    function chooseExamOption(qIdx, btnEl, val) {
+      if (isExamSubmitted) return;
+      examAnswersMap[qIdx] = val;
+      const card = document.getElementById(`test-q-${qIdx}`);
+      card.querySelectorAll(".opt-btn-3d").forEach(b => b.classList.remove("selected"));
+      btnEl.classList.add("selected");
+    }
+
+    function getWittyPraise(score10, violations) {
+      if (violations > 0) {
+        return `Điểm số đã ghi nhận, nhưng hệ thống phát hiện ${violations} lần rời màn hình hoặc tra nghĩa. Lần tới hãy thử sức bằng chính nội lực siêu phàm của mình nhé!`;
+      }
+      if (score10 >= 9.5) {
+        const topJokes = [
+          "Đỉnh nóc kịch trần! Từ điển Oxford chắc đang xếp hàng xin chữ ký của bạn rồi!",
+          "Xuất sắc không tì vết! Não bộ chạy tốc độ ánh sáng, 10 điểm thanh lịch không có nhưng!",
+          "Quá dữ dội! Với phong độ này thì đề thi THPT Quốc gia cũng phải gọi bạn bằng sư phụ!"
+        ];
+        return topJokes[Math.floor(Math.random() * topJokes.length)];
+      }
+      if (score10 >= 8.0) {
+        const highJokes = [
+          "Quá đỉnh luôn! Chỉ thiếu một xíu bụi phép thuật nữa là chạm tới ngưỡng huyền thoại!",
+          "Phong độ cực cháy! Bạn vừa khiến kho từ vựng Unit này phải gật gù nể phục!",
+          "Rất ấn tượng! Cứ giữ vững tốc độ này thì mục tiêu điểm 9-10 nằm gọn trong tầm tay!"
+        ];
+        return highJokes[Math.floor(Math.random() * highJokes.length)];
+      }
+      if (score10 >= 6.0) {
+        const midJokes = [
+          "Khá lắm chiến binh! Bộ nhớ đã nạp được kha khá từ vựng, ôn thêm một vòng nữa là bứt phá ngoạn mục!",
+          "Tín hiệu vũ trụ báo rằng bạn sắp thành cao thủ rồi, chỉ cần rà lại mấy câu sai bên trên thôi!"
+        ];
+        return midJokes[Math.floor(Math.random() * midJokes.length)];
+      }
+      return "Khởi động nhẹ nhàng thôi đúng không nào? Mở lại tab Học Từ Vựng nghe phát âm vài lượt rồi quay lại phục thù mã đề mới nhé!";
+    }
+
+    function gradeAndSubmitExam() {
+      if (!currentExamList.length || isExamSubmitted) return;
+      isExamSubmitted = true;
+      isTestingNow = false;
+
+      let rightCount = 0;
+      currentExamList.forEach((item, idx) => {
+        const userVal = (examAnswersMap[idx] || "").trim().toLowerCase();
+        const trueVal = item.answer.trim().toLowerCase();
+        const card = document.getElementById(`test-q-${idx}`);
+
+        if (userVal === trueVal) {
+          rightCount++;
+          card.style.borderColor = "#16A34A";
+          card.style.background = "#F0FDF4";
+        } else {
+          card.style.borderColor = "#DC2626";
+          card.style.background = "#FEF2F2";
+          const ansNote = document.createElement("p");
+          ansNote.style.cssText = "color:#DC2626; font-weight:800; margin-top:10px;";
+          ansNote.textContent = `Đáp án đúng: ${item.answer}`;
+          card.appendChild(ansNote);
+        }
+      });
+
+      const total = currentExamList.length;
+      const score10 = parseFloat(((rightCount / total) * 10).toFixed(2));
+      const xpEarned = rightCount * 15 + (score10 >= 9 && tabViolationCount === 0 ? 100 : 0);
+
+      if (userSession && !userSession.isTeacher) {
+        userSession.xp = (userSession.xp || 0) + xpEarned;
+        localStorage.setItem("gs10_khanhlinh_user_v1", JSON.stringify(userSession));
+        refreshHeaderUI();
+      }
+
+      playFeedbackSound("ok");
+      const totalViolations = tabViolationCount + lookupViolationCount;
+      const wittyComment = getWittyPraise(score10, totalViolations);
+
+      const summaryPanel = document.getElementById("examScoreSummary");
+      summaryPanel.classList.remove("hidden");
+      summaryPanel.innerHTML = `
+        <div style="display:inline-block; background:#FFE4EF; color:#BE123C; font-weight:900; font-size:0.82rem; padding:4px 14px; border-radius:999px; margin-bottom:8px;">
+          BÁO CÁO KẾT QUẢ BÀI KIỂM TRA • MÃ ĐỀ ${currentExamCode}
+        </div>
+        <h3 style="color:#3B185F; font-size:1.45rem; font-weight:900; margin-bottom:6px;">
+          Điểm số: <span style="color:#E11D48; font-size:1.75rem;">${score10} / 10</span> (${rightCount}/${total} câu đúng)
+        </h3>
+        <p style="font-weight:900; color:#6D28D9; font-size:1.05rem; margin-bottom:8px;">
+          Tích lũy thêm: +${xpEarned} XP (Tổng XP hiện tại: ${userSession?.xp || xpEarned} XP)
+        </p>
+        <p style="font-weight:700; color:#1E293B; background:#FFFFFF; padding:12px 16px; border-radius:14px; border:1.5px solid #FBCFE8; margin-bottom:10px;">
+          ${wittyComment}
+        </p>
+        <p style="font-size:0.88rem; font-weight:800; color:${totalViolations > 0 ? '#DC2626' : '#15803D'};">
+          Thống kê giám sát: Chuyển tab ${tabViolationCount} lần | Tra nghĩa khi thi ${lookupViolationCount} lần.
+        </p>
+      `;
+
+      const recordObj = {
+        time: new Date().toLocaleString("vi-VN"),
+        name: userSession?.name || "Học sinh",
+        email: userSession?.email || "",
+        stuClass: userSession?.stuClass || "10",
+        unitAndCode: `${getActiveUnitKey()} (${currentExamCode})`,
+        score: `${score10}/10 (${rightCount}/${total})`,
+        tabViolations: tabViolationCount,
+        lookupViolations: lookupViolationCount,
+        note: wittyComment
+      };
+      scoreRecords.unshift(recordObj);
+      localStorage.setItem("gs10_khanhlinh_logs_v1", JSON.stringify(scoreRecords));
+
+      if (sheetWebhookUrl) {
+        fetch(sheetWebhookUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(recordObj)
+        }).catch(() => {});
+      }
+    }
+
+    // ================= 9. TEACHER ADMIN CONTROLS =================
+    function openTeacherWorkspaceUI() {
+      document.getElementById("teacherGateScreen").classList.add("hidden");
+      document.getElementById("teacherWorkspace").classList.remove("hidden");
+      document.getElementById("sheetUrlField").value = sheetWebhookUrl;
+      renderAdminLogsTable();
+    }
+
+    function unlockTeacherGate() {
+      const mail = document.getElementById("gateTeaEmail").value.trim().toLowerCase();
+      const pass = document.getElementById("gateTeaPass").value.trim();
+      if (mail !== _T_MAIL || pass !== _T_KEY) {
+        alert("Gmail hoặc mật khẩu giáo viên chưa chính xác.");
+        return;
+      }
+      userSession = {
+        name: "Cô Nguyễn Thị Khánh Linh",
+        email: _T_MAIL,
+        stuClass: "Giáo Viên",
+        xp: 0,
+        isTeacher: true
+      };
+      localStorage.setItem("gs10_khanhlinh_user_v1", JSON.stringify(userSession));
+      refreshHeaderUI();
+      openTeacherWorkspaceUI();
+      renderCurrentUnitAll();
+      playFeedbackSound("ok");
+    }
+
+    function lockTeacherGate() {
+      document.getElementById("gateTeaEmail").value = "";
+      document.getElementById("gateTeaPass").value = "";
+      document.getElementById("teacherGateScreen").classList.remove("hidden");
+      document.getElementById("teacherWorkspace").classList.add("hidden");
+    }
+
+    function saveUnitsDB() {
+      localStorage.setItem("gs10_khanhlinh_db_v1", JSON.stringify(unitsDB));
+      onUnitSelected();
+    }
+
+    function restoreDefaultUnitData() {
+      if (!confirm("Khôi phục lại toàn bộ dữ liệu gốc của tất cả các Unit?")) return;
+      unitsDB = defaultUnitsDB;
+      saveUnitsDB();
+      alert("Đã khôi phục dữ liệu gốc thành công.");
+    }
+
+    // Vocabulary Editor
+    function openWordEditor(wordId = "") {
+      if (!userSession || !userSession.isTeacher) return;
+      const uObj = getActiveUnitObj();
+      document.getElementById("editVocabId").value = wordId;
+      if (wordId) {
+        const item = (uObj.vocab || []).find(v => v.id === wordId);
+        if (!item) return;
+        document.getElementById("editVocabPart").value = item.part;
+        document.getElementById("editVocabWord").value = item.word;
+        document.getElementById("editVocabPos").value = item.pos;
+        document.getElementById("editVocabIpa").value = item.ipa;
+        document.getElementById("editVocabSyn").value = item.synonym || "";
+        document.getElementById("editVocabMeaning").value = item.meaning;
+        document.getElementById("editVocabExample").value = item.example;
+      } else {
+        document.getElementById("editVocabPart").value = document.getElementById("uploadPartName").value || "Từ vựng bổ sung";
+        document.getElementById("editVocabWord").value = "";
+        document.getElementById("editVocabPos").value = "(n)";
+        document.getElementById("editVocabIpa").value = "";
+        document.getElementById("editVocabSyn").value = "";
+        document.getElementById("editVocabMeaning").value = "";
+        document.getElementById("editVocabExample").value = "";
+      }
+      document.getElementById("wordEditorModal").classList.remove("hidden");
+    }
+
+    function closeWordEditor() {
+      document.getElementById("wordEditorModal").classList.add("hidden");
+    }
+
+    function saveWordEditor() {
+      if (!userSession || !userSession.isTeacher) return;
+      const uKey = getActiveUnitKey();
+      const id = document.getElementById("editVocabId").value;
+      const part = document.getElementById("editVocabPart").value.trim() || "Từ vựng Unit";
+      const word = document.getElementById("editVocabWord").value.trim();
+      const pos = document.getElementById("editVocabPos").value.trim() || "(n)";
+      const ipa = document.getElementById("editVocabIpa").value.trim();
+      const synonym = document.getElementById("editVocabSyn").value.trim();
+      const meaning = document.getElementById("editVocabMeaning").value.trim();
+      const example = document.getElementById("editVocabExample").value.trim() || `Example sentence using ${word}.`;
+
+      if (!word || !meaning) {
+        alert("Vui lòng nhập đầy đủ từ tiếng Anh và nghĩa tiếng Việt.");
+        return;
+      }
+
+      if (id) {
+        const idx = unitsDB[uKey].vocab.findIndex(v => v.id === id);
+        if (idx !== -1) {
+          unitsDB[uKey].vocab[idx] = { ...unitsDB[uKey].vocab[idx], part, word, pos, ipa, synonym, meaning, example };
+        }
+      } else {
+        unitsDB[uKey].vocab.unshift({
+          id: "w_" + Date.now(),
+          part, word, pos, ipa, synonym, meaning, example, wordFamily: []
+        });
+      }
+      saveUnitsDB();
+      closeWordEditor();
+      playFeedbackSound("ok");
+    }
+
+    function removeVocabItem(id) {
+      if (!userSession || !userSession.isTeacher) return;
+      if (!confirm("Xóa từ vựng này khỏi Unit hiện tại?")) return;
+      const uKey = getActiveUnitKey();
+      unitsDB[uKey].vocab = unitsDB[uKey].vocab.filter(v => v.id !== id);
+      saveUnitsDB();
+    }
+
+    // Grammar Editor
+    function openGrammarEditor(gramId = "") {
+      if (!userSession || !userSession.isTeacher) return;
+      const uObj = getActiveUnitObj();
+      document.getElementById("editGramId").value = gramId;
+      if (gramId) {
+        const g = (uObj.grammarNotes || []).find(x => x.id === gramId);
+        if (!g) return;
+        document.getElementById("editGramTitle").value = g.title;
+        document.getElementById("editGramUsage").value = g.usage;
+        document.getElementById("editGramFormula").value = g.formula;
+        document.getElementById("editGramSignals").value = g.signals;
+      } else {
+        document.getElementById("editGramTitle").value = "";
+        document.getElementById("editGramUsage").value = "";
+        document.getElementById("editGramFormula").value = "";
+        document.getElementById("editGramSignals").value = "";
+      }
+      document.getElementById("grammarEditorModal").classList.remove("hidden");
+    }
+
+    function closeGrammarEditor() {
+      document.getElementById("grammarEditorModal").classList.add("hidden");
+    }
+
+    function saveGrammarEditor() {
+      if (!userSession || !userSession.isTeacher) return;
+      const uKey = getActiveUnitKey();
+      const id = document.getElementById("editGramId").value;
+      const title = document.getElementById("editGramTitle").value.trim();
+      const usage = document.getElementById("editGramUsage").value.trim();
+      const formula = document.getElementById("editGramFormula").value.trim();
+      const signals = document.getElementById("editGramSignals").value.trim();
+
+      if (!title || !usage) {
+        alert("Vui lòng nhập tiêu đề và nội dung giải thích ngữ pháp.");
+        return;
+      }
+
+      if (!unitsDB[uKey].grammarNotes) unitsDB[uKey].grammarNotes = [];
+      if (id) {
+        const idx = unitsDB[uKey].grammarNotes.findIndex(x => x.id === id);
+        if (idx !== -1) {
+          unitsDB[uKey].grammarNotes[idx] = { id, title, usage, formula, signals };
+        }
+      } else {
+        unitsDB[uKey].grammarNotes.push({ id: "g_" + Date.now(), title, usage, formula, signals });
+      }
+      saveUnitsDB();
+      closeGrammarEditor();
+      playFeedbackSound("ok");
+    }
+
+    function addGrammarQuestion() {
+      if (!userSession || !userSession.isTeacher) return;
+      const uKey = getActiveUnitKey();
+      const question = document.getElementById("newGramQText").value.trim();
+      const opts = document.getElementById("newGramQOpts").value.split("|").map(s => s.trim()).filter(Boolean);
+      const answer = document.getElementById("newGramQAns").value.trim();
+      const explanation = document.getElementById("newGramQExp").value.trim();
+
+      if (!question || opts.length < 2 || !answer) {
+        alert("Vui lòng nhập đầy đủ câu hỏi, các phương án ngăn cách bằng dấu | và đáp án đúng.");
+        return;
+      }
+
+      if (!unitsDB[uKey].grammarQuestions) unitsDB[uKey].grammarQuestions = [];
+      unitsDB[uKey].grammarQuestions.push({
+        id: "gq_" + Date.now(),
+        question, options: opts, answer, explanation
+      });
+      saveUnitsDB();
+      document.getElementById("newGramQText").value = "";
+      document.getElementById("newGramQOpts").value = "";
+      document.getElementById("newGramQAns").value = "";
+      document.getElementById("newGramQExp").value = "";
+      alert("Đã thêm câu hỏi ngữ pháp vào Unit thành công.");
+    }
+
+    // Word (.docx / .doc) & Google Drive Parser
+    async function processUploadedDoc(event) {
+      if (!userSession || !userSession.isTeacher) return;
+      const file = event.target.files[0];
+      if (!file) return;
+      const statusEl = document.getElementById("docUploadStatus");
+      statusEl.textContent = "Đang đọc và trích xuất dữ liệu từ tài liệu...";
+
+      try {
+        let rawText = "";
+        if (file.name.endsWith(".json")) {
+          const parsed = JSON.parse(await file.text());
+          if (typeof parsed === "object" && !Array.isArray(parsed)) {
+            unitsDB = parsed;
+            saveUnitsDB();
+            statusEl.textContent = "Đã khôi phục toàn bộ cơ sở dữ liệu từ file JSON.";
+            return;
+          }
+        } else if (file.name.endsWith(".docx") && window.JSZip) {
+          const buf = await file.arrayBuffer();
+          const zip = await JSZip.loadAsync(buf);
+          const xmlStr = await zip.file("word/document.xml").async("string");
+          const xmlDoc = new DOMParser().parseFromString(xmlStr, "text/xml");
+          const paras = xmlDoc.getElementsByTagName("w:p");
+          const lines = [];
+          for (let p of paras) {
+            const ts = p.getElementsByTagName("w:t");
+            let line = "";
+            for (let t of ts) line += t.textContent;
+            if (line.trim()) lines.push(line.trim());
+          }
+          rawText = lines.join("\n");
+        } else {
+          rawText = await file.text();
+        }
+
+        const targetPart = document.getElementById("uploadPartName").value.trim() || `Tài liệu: ${file.name}`;
+        const count = extractVocabLinesIntoUnit(rawText, targetPart);
+        statusEl.textContent = `Hoàn tất! Đã tích hợp tự động ${count} mục từ vựng từ "${file.name}" vào ${getActiveUnitKey()}.`;
+        playFeedbackSound("ok");
+      } catch (err) {
+        statusEl.textContent = "Không thể đọc file định dạng .doc cũ. Vui lòng lưu file sang .docx hoặc dán danh sách từ vào ô bên dưới.";
+      }
+    }
+
+    function extractVocabLinesIntoUnit(text, partName) {
+      const uKey = getActiveUnitKey();
+      const lines = text.split("\n").map(l => l.trim()).filter(Boolean);
+      let added = 0;
+
+      lines.forEach((line, idx) => {
+        if (line.includes("|")) {
+          const p = line.split("|").map(s => s.trim());
+          if (p[0] && p.length >= 2) {
+            unitsDB[uKey].vocab.unshift({
+              id: "doc_" + Date.now() + "_" + idx,
+              part: partName,
+              word: p[0],
+              pos: p[1] || "(n)",
+              ipa: p[2] || "",
+              meaning: p[3] || p[1],
+              synonym: p[4] || "",
+              example: p[5] || `Contextual example with ${p[0]}.`,
+              wordFamily: []
+            });
+            added++;
+            return;
+          }
+        }
+
+        const m = line.match(/^(?:\d+[\.\)]\s*)?([a-zA-Z\s\-']{2,35})\s*(\([a-z\.\s\/]+\))?\s*[:\-–]\s*(.+)$/i);
+        if (m) {
+          const w = m[1].trim();
+          const pos = m[2] ? m[2].trim() : "(n/v)";
+          const meaning = m[3].trim();
+          if (w.split(" ").length <= 5 && meaning.length >= 2) {
+            unitsDB[uKey].vocab.unshift({
+              id: "doc_" + Date.now() + "_" + idx,
+              part: partName,
+              word: w,
+              pos,
+              ipa: "",
+              meaning,
+              synonym: "",
+              example: `Students practice using "${w}" in context.`,
+              wordFamily: []
+            });
+            added++;
+          }
+        }
+      });
+
+      if (added > 0) saveUnitsDB();
+      return added;
+    }
+
+    async function importFromGoogleDocs() {
+      if (!userSession || !userSession.isTeacher) return;
+      const url = document.getElementById("driveLinkField").value.trim();
+      const match = url.match(/\/document\/d\/([a-zA-Z0-9-_]+)/);
+      if (!match) {
+        alert("Vui lòng dán đường link Google Docs hợp lệ (https://docs.google.com/document/d/...).");
+        return;
+      }
+      try {
+        const res = await fetch(`https://docs.google.com/document/d/${match[1]}/export?format=txt`);
+        if (!res.ok) throw new Error("Access denied");
+        const txt = await res.text();
+        const partName = document.getElementById("uploadPartName").value.trim() || "Tài liệu từ Google Drive";
+        const count = extractVocabLinesIntoUnit(txt, partName);
+        alert(`Đã trích xuất tự động ${count} từ vựng từ Google Docs vào ${getActiveUnitKey()}.`);
+      } catch (e) {
+        alert("Tài liệu Drive đang đặt chế độ riêng tư. Vui lòng tải file về dạng .docx rồi tải lên ở mục Tải Lên File Word.");
+      }
+    }
+
+    function importBulkWordsText() {
+      if (!userSession || !userSession.isTeacher) return;
+      const raw = document.getElementById("bulkWordsTextarea").value.trim();
+      if (!raw) return;
+      const partName = document.getElementById("uploadPartName").value.trim() || "Từ vựng bổ sung";
+      const count = extractVocabLinesIntoUnit(raw, partName);
+      document.getElementById("bulkWordsTextarea").value = "";
+      alert(`Đã nạp thành công ${count} từ vựng mới vào ${getActiveUnitKey()}.`);
+    }
+
+    function saveWebhookLink() {
+      if (!userSession || !userSession.isTeacher) return;
+      sheetWebhookUrl = document.getElementById("sheetUrlField").value.trim();
+      localStorage.setItem("gs10_khanhlinh_sheet_v1", sheetWebhookUrl);
+      alert("Đã lưu cấu hình Google Sheet thành công.");
+    }
+
+    function downloadBackupJSON() {
+      const blob = new Blob([JSON.stringify(unitsDB, null, 2)], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "Global_Success_10_Backup.json";
+      a.click();
+    }
+
+    function renderAdminLogsTable() {
+      const tbody = document.getElementById("adminLogsTbody");
+      if (!scoreRecords.length) {
+        tbody.innerHTML = `<tr><td colspan="9" style="text-align:center;">Chưa có dữ liệu nộp bài nào được ghi nhận.</td></tr>`;
+        return;
+      }
+      tbody.innerHTML = scoreRecords.map(r => `
+        <tr>
+          <td>${r.time}</td>
+          <td><strong>${r.name}</strong></td>
+          <td>${r.email}</td>
+          <td>${r.stuClass}</td>
+          <td><span style="background:#F3E8FF; color:#5B21B6; padding:3px 9px; border-radius:999px; font-weight:800;">${r.unitAndCode}</span></td>
+          <td><strong style="color:#15803D;">${r.score}</strong></td>
+          <td style="color:${r.tabViolations > 0 ? '#DC2626' : '#15803D'}; font-weight:800;">${r.tabViolations} lần</td>
+          <td style="color:${r.lookupViolations > 0 ? '#DC2626' : '#15803D'}; font-weight:800;">${r.lookupViolations} lần</td>
+          <td>${r.note}</td>
+        </tr>
+      `).join("");
+    }
+
+    function exportLogsCSV() {
+      const headers = ["Thoi gian", "Ho ten", "Gmail", "Lop", "Unit / Ma de", "Diem so", "Chuyen tab", "Tra nghia khi thi", "Ghi chu"];
+      const rows = scoreRecords.map(r => [r.time, r.name, r.email, r.stuClass, r.unitAndCode, r.score, r.tabViolations, r.lookupViolations, r.note]);
+      const csv = "\uFEFF" + [headers, ...rows].map(row => row.map(c => `"${c}"`).join(",")).join("\n");
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "Bang_Diem_Global_Success_10.csv";
+      a.click();
+    }
+
+    // ================= 10. INITIALIZE APP =================
+    window.onload = () => {
+      populateVoices();
+      populateUnitSelector();
+      if (userSession) {
+        document.getElementById("loginModal").classList.add("hidden");
+        refreshHeaderUI();
+        if (userSession.isTeacher) {
+          openTeacherWorkspaceUI();
+        }
+      }
+    };
+  </script>
+</body>
+</html>
